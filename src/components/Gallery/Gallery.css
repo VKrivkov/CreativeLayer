@@ -1,0 +1,123 @@
+.gallery-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    padding-top: 100px;
+    align-items: center;
+    background-image: url(../../assets/MainBG.svg);
+    padding-bottom: 40px;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+.gallery-header{
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  padding: 50px 100px;
+  background-color: #090909;
+  border: 1px solid #f5f5f5;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+}
+
+.headline-gallery{
+  color: #E99F0E;
+  font-family: Inter;
+  font-size: 80px;
+  font-weight:700;
+  text-align: center;
+
+}
+
+.text-block{
+  display: flex;
+  justify-content: center;
+}
+.text-block p{
+  margin-top: 20px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  color: #f5f5f5; 
+  text-align: center;
+
+}
+
+
+
+
+
+@media (max-width: 1050px){
+  .text-block h6{
+    display:none;
+  }
+  .text-block p{
+    color: #090909;
+    margin-left: 80px;
+    margin-right: 80px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .headline-gallery{
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+  }
+
+  .text-block{
+    margin-bottom: 50px;
+  }
+
+  .headline-gallery{
+
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+@media (max-width: 650px){
+  .gallery-container {
+    padding-top: 50px;
+  }
+
+  .text-block p{
+    color: #090909;
+    margin: 0px 50px 0px 50px;
+
+    text-align: justify;
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .headline-gallery{
+    font-family: Playfair Display, sans-serif; /* Replace with the font of your choice */
+    font-size: 40px;
+    font-weight: 300;
+    color: #66952F; /* Adjust the color value to match the desired shade of green */
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+  }
+
+  .text-block{
+    margin-bottom: 35px;
+  }
+}
+
+
+@media (max-width:420px){
+  .text-block p{
+    color: #090909;
+    margin-left: 25px;
+    margin-right: 25px;
+    text-align: justify;
+    width: 100%;
+    font-size: 16px;
+  }
+}
