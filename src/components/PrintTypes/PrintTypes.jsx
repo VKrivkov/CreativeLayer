@@ -17,7 +17,7 @@ const PrintTypes = () => {
               <h6>SLA 3D Printing</h6>
               <p>Welcome to the world of SLA printing magic! Here, dreams take shape as liquid resin solidifies under the mesmerizing glow of ultraviolet light. With precision that'll make your dentist question their skills. So, get ready to witness your imagination come to life with every layer!</p>
             </div>
-            <div className='sla-image-conainer'>
+            <div className='sla-image-container'>
               <img src={SLA} alt = 'SLA printer image'/>
             </div>
         </div>
