@@ -24,15 +24,16 @@
   /* Place previous slide to the left */
   .slide.prev {
     transform: translateX(calc(-100% - 20px)); /* Slide width + margin */
-    opacity: 0.5; /* Make the active slide fully opaque */
+    opacity: 1; /* Make the active slide fully opaque */
+    filter:brightness(30%);
 
   }
   
   /* Place next slide to the right */
   .slide.next {
     transform: translateX(calc(100% + 20px)); /* Slide width + margin */
-    opacity: 0.5; /* Make the active slide fully opaque */
-
+    opacity: 1; /* Make the active slide fully opaque */
+    filter:brightness(30%);
   }
   
   .arrowLeft, .arrowRight {
@@ -66,6 +67,7 @@
     position: absolute; /* Make it relative to position arrows */
     width: 100%; /* Make the image responsive */
     height: 100%; /* Maintain aspect ratio */
+    object-fit: cover;
     border-radius: 15px;
     border: 1px solid #f5f5f5;
     display: block; /* Display as block to fill width of .slide */

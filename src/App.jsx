@@ -1,5 +1,5 @@
 import React, {useEffect }  from 'react'
-import { MainPage, Navbar, PrintTypes, Gallery} from './components';
+import { MainPage, Navbar, PrintTypes, Gallery, ContactPage} from './components';
 
 import './App.css'
 
@@ -37,6 +37,7 @@ return () => window.removeEventListener('wheel', blockHorizontalScroll, { passiv
      <MainPage />
      <PrintTypes/>
      <Gallery/>
+     <ContactPage/>
     </>
   )
 }
