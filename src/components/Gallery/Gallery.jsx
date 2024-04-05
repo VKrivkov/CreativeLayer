@@ -6,7 +6,7 @@ import { images } from './images.js';
 const Gallery = () => {
 
   return (
-    <div id='gallery-section' className='gallery-container'>
+    <div id='gallery' className='gallery-container'>
       <div className='gallery-header'>
         <h1 className='headline-gallery'>Still no idea?</h1>
         <div className='text-block'>

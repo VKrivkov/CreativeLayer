@@ -105,15 +105,16 @@ function ContactPage() {
 
 
   return (
-    <div className="contact-form-container">
+    <div className="contact-form-container" id='contact'>
       <div className="contact-info">
         <h2>Contact me!</h2>
-        <h6>Welcome to the zany corner of our 3D wonderland, the one, the only – Contact Extruder 3000! Are you lost in the labyrinth of layers? Do your models look more like abstract art than the masterpiece you envisioned? Fear not, intrepid creator! </h6>
-        <p><strong>contactInfo.a'</strong> contactInfo.address</p>
-        <p><strong>contactInfo.p'</strong> contactInfo.phone'</p>
-        <p><strong>contactInfo.e'</strong> contactInfo.email'</p>
+        <p><strong>Telegram:</strong> contactInfo.address</p>
+        <p><strong>Email:</strong> contactInfo.phone'</p>
+        <p><strong>Instagram:</strong> contactInfo.email'</p>
       </div>
-      
+
+      <h1>OR</h1>
+
       <form  className="contact-form2" onSubmit={handleSubmit}>
       <div className="input-row">
           <div>
@@ -126,7 +127,6 @@ function ContactPage() {
               onInvalid={handleInvalid} // Add this prop to all inputs
               placeholder='contact.firstNamePlaceholder'
               required
-              title="Please enter your first name."
             />
             {formErrors.firstName && <div className="error-message">{formErrors.firstName}</div>}
           </div>
@@ -141,7 +141,6 @@ function ContactPage() {
             onInvalid={handleInvalid} // Add this prop to all inputs
             placeholder='contact.lastNamePlaceholder'
             required
-            title="Please enter your last name."
           />
             {formErrors.lastName && <div className="error-message">{formErrors.lastName}</div>}
           </div>
@@ -171,7 +170,6 @@ function ContactPage() {
 
           placeholder='contact.phoneNumberPlaceholder'
           required
-          title="Please enter your phone number."
           pattern="\+?[0-9]{7,15}"
 
         />

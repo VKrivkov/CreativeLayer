@@ -1,16 +1,9 @@
-// src/components/Navbar.jsx
 import React from 'react';
-import './Navbar.css';
+import "./Footer.css";
 import Logo from "../../assets/Logo.svg"
 
-import Icon1 from "../../assets/FacebookIcon.png"
-import Icon2 from "../../assets/InstaIcon.png"
-import Icon3 from "../../assets/TwitterIcon.png"
 
-
-
-
-const Navbar = () => {
+const Footer = () => {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -50,30 +43,34 @@ const Navbar = () => {
     // Execute the smooth scroll function
     smoothScroll(sectionTop);
   };
-  
 
   return (
-    <div className='navbar'>
-      <div className='navbar-logo'>
-        <img src={Logo} alt="Logo" />
-      </div>
-      <div className='navbar-links'>
-        <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
-        <a onClick={() => scrollToSection('gallery')} className="nav-link">3D-Models</a>
-        <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
-
-        <div className='social-media'>
-          <img src={Icon1} alt="Facebook" />
-          <img src={Icon2} alt="Instagram" />
-          <img src={Icon3} alt="Twitter" />
+    <div className='footer-container'>
+      <div className='footer-first-level'>
+        <div className='company-container'>
+          <img onClick={() => scrollToSection('home')} src={Logo} alt="Logo" />
+          <p>Lev pidor</p>
+        </div>
+        <div className='contact-info-container'>
+          <h6>Contact me</h6>
+          <p>footer.telephone</p>
+          <p>footer.email</p>
+        </div>
+        <div className='navigation-footer'>
+          <a onClick={() => scrollToSection('home')} className="footer-link">Home</a>
+          <a onClick={() => scrollToSection('gallery')} className="footer-link">3D-Models</a>
+          <a onClick={() => scrollToSection('contact')} className="footer-link">Contact</a>
+        </div>
+        <div className='nobody-reads-container'>
+          <div>
+            <p>privacyPolicy</p>
+            <p>footer.termsCondition</p>
+          </div>
+          <p className='Rights'>footer.right</p>
         </div>
       </div>
     </div>
   );
-};
+}
 
-
-
-
-
-export default Navbar;
+export default Footer;
