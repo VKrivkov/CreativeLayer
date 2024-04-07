@@ -10,7 +10,7 @@
   z-index: 100;
   top: 0px;
   left: 0px;
-  padding: 25px 50px;
+  padding: 25px 5vw;
   background-color: #090909;
 }
 
@@ -36,4 +36,13 @@
   height: 25px;
 
 }
+
+
+
+.nav-link:hover{
+  color:  #E99F0E; /* or use border-bottom if that's the design */
+  transition: color 0.2s ease-in-out; /* Transition effect for color property */
+
+}
+
 
