@@ -5,6 +5,7 @@ import Gallery from "./Gallery/Gallery";
 import Footer from "./Footer/Footer";
 
 import ContactPage from "./ContactPage/ContactPage";
+import HowItWorks from "./HowItWorks/HowItWorks";
 
 
 
@@ -13,4 +14,5 @@ import ContactPage from "./ContactPage/ContactPage";
 
 
 
-export {MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer} 
+
+export {MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks} 

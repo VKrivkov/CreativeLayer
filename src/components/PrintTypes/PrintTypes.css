@@ -1,8 +1,7 @@
 .print-types{
     width: 100%;
-    background-image: url(../../assets/printing.jpg);
-    background-size:cover;
-    background-position: center;   
+    background-image: url(../../assets/BG3.jpg);
+    background-size: cover;   
     display: flex;
     flex-direction: column;
     align-items: center;

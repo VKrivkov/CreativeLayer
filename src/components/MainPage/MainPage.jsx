@@ -36,7 +36,6 @@ const MainPage = () => {
       return 'size-4';
     else if (index === 11)
       return 'size-3';
-
   }
 
   useEffect(() => {

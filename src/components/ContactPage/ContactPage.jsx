@@ -7,6 +7,7 @@ function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
 
+
   const handleInvalid = (e) => {
     e.preventDefault(); // Prevent the browser from showing default error bubble / hint
     const fieldName = e.target.name;
@@ -106,14 +107,14 @@ function ContactPage() {
 
   return (
     <div className="contact-form-container" id='contact'>
-      <div className="contact-info">
-        <h2>Contact me!</h2>
-        <p><strong>Telegram:</strong> contactInfo.address</p>
-        <p><strong>Email:</strong> contactInfo.phone'</p>
-        <p><strong>Instagram:</strong> contactInfo.email'</p>
-      </div>
+        <div className="contact-info">
+          <h2>Contact me!</h2>
+          <p><strong>Telegram:</strong> contactInfo.address</p>
+          <p><strong>Email:</strong> contactInfo.phone'</p>
+          <p><strong>Instagram:</strong> contactInfo.email'</p>
+        </div>
+        <h1>OR</h1>
 
-      <h1>OR</h1>
 
       <form  className="contact-form2" onSubmit={handleSubmit}>
       <div className="input-row">

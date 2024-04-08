@@ -1,5 +1,5 @@
 import React, {useEffect }  from 'react'
-import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer} from './components';
+import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks} from './components';
 
 import './App.css'
 
@@ -17,24 +17,12 @@ const ScrollToTop = () => {
 
 function App() {
 
-  useEffect(() => {
-
- // Function to block horizontal scrolling
- const blockHorizontalScroll = (e) => {
-  window.scrollTo(0, window.scrollY);
-};
-
-// Add event listener when component mounts
-window.addEventListener('wheel', blockHorizontalScroll, { passive: false });
-
-// Cleanup event listener when component unmounts
-return () => window.removeEventListener('wheel', blockHorizontalScroll, { passive: false });
-}, []); // Emp
 
   return (
     <>
-     <Navbar />
-     <MainPage />
+     <Navbar/>
+     <MainPage/>
+     <HowItWorks/>
      <PrintTypes/>
      <Gallery/>
      <ContactPage/>

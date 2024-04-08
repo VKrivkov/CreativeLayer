@@ -4,7 +4,7 @@
     font-family: Inter;
     font-size: 18px;
     font-weight: 300;
-    background-image: url('../../assets/ContactPageBG3.jpg');
+    background-image: url('../../assets/BG6.jpg');
     background-size: cover;
     background-position: center;
     border-bottom: 1px solid #f5f5f5;    
@@ -18,12 +18,14 @@
     gap:35px
   }
 
+
+
   .contact-form-container h1{
     color: #E99F0E;
     font-family: Inter;
     font-size: 80px;
     font-weight:700;
-    margin: 50px;
+    margin: 100px 50px;
 }
   
   .contact-info {
@@ -170,6 +172,7 @@
     padding: 15px;
     border: 1px solid #d21c1c;
 }
+
 
 /* Error message styling */
 .error-message {
