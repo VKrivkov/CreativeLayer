@@ -60,25 +60,25 @@ const MainPage = () => {
 
   return (
     <div className="main-page" id='home'>
-      <div className='text-head'>
+      <header className='text-head'>
         <div className='main-page-headline'>
           <h2>PRINT</h2>
           <h1>YOUR</h1>
           <h3>IDEAS</h3>
         </div>
         <div className='main-page-fun'>
-          <p>-Our 3d printing studio is here to bring to life any of your ideas.</p> 
-          <p> -Any ideas?  </p>  
+          <p>-Our 3d printing studio is here to print any of your models.</p> 
+          <p> -Any models?  </p>  
           <strong> -All of them.</strong>
         </div>
-      </div>
+      </header>
       <div className="imgBox">
         {images.map((image, index) => (
           <img
             key={index}
             className={`bento-image ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            alt={`Image ${index + 1}`}
+            alt={`3D printing cyprus`}
           />
         ))}
       </div>
