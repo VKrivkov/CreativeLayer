@@ -4,7 +4,6 @@ import './ContactPage.css'
 
 function ContactPage() {
   const [formErrors, setFormErrors] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileName, setFileName] = useState('Choose file (.STL)...');
   const fileInputRef = useRef(null);
 
@@ -133,7 +132,6 @@ function ContactPage() {
         
 
         <button type="submit" className="submit-button">Submit</button>
-        {isSubmitted && <div className="success-popup">Thank you for your submission!</div>}
       </form>
     </div>
   )
