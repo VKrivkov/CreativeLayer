@@ -44,60 +44,6 @@ function ContactPage() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-  
-    // const formDataToSubmit = new FormData();
-    // formDataToSubmit.append("subject", "New Submission from Creative Layer");
-    // formDataToSubmit.append('email', formData.email);
-    // formDataToSubmit.append('printingType', formData.printingType);
-    // formDataToSubmit.append('message', formData.message);
-    // formDataToSubmit.append('Agree to privacy policy', 'true');
-  
-    // // Checking the file size using the ref
-    // if (fileInputRef.current && fileInputRef.current.files[0]) {
-    //   const file = fileInputRef.current.files[0];
-    //   const filesize = file.size / 1024; // Size in KB
-  
-    //   if (filesize > 4000) {
-    //     alert("Please upload file less than 4 MB");
-    //     return;
-    //   }
-  
-    //   //formDataToSubmit.append('attachment', file);
-    // }
-    // for (let [key, value] of formDataToSubmit.entries()) {
-    //   console.log(`${key}: ${value instanceof Blob ? `${value.name}, ${value.size}` : value}`);
-    // }
-
-
-    // // Use the Fetch API to make the request
-    // try {
-    //   const response = await fetch("https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8", {
-    //     method: "POST",
-    //     body: formDataToSubmit, // This should be formDataToSubmit, not formData
-    //   });
-  
-    //   const json = await response.json();
-  
-      // if (response.ok) {
-       // console.log(json.message);
-        // Reset state to clear the form
-        setFormData({
-          email: '',
-          printingType: 'SLA',
-          message: '',
-          file: null,
-        });
-        setFileName('Choose file...');
-
-    //   } 
-    //   else {
-    //     console.error("Error:", response);
-    //   }
-    // } catch (error) {
-    //   console.error("Error during submission:", error);
-    //   console.log(await response.text());
-    // }
   };
   
 
