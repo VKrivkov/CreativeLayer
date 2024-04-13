@@ -5,7 +5,7 @@ import './ContactPage.css'
 function ContactPage() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [fileName, setFileName] = useState('Choose file...');
+  const [fileName, setFileName] = useState('Choose file (.STL)...');
   const fileInputRef = useRef(null);
 
 
@@ -68,7 +68,7 @@ function ContactPage() {
         <h1>OR</h1>
 
 
-        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8" encType="multipart/form-data" method="POST">
+        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8" enctype="multipart/form-data" method="POST">
         <input
           type="email"
           name="email"
@@ -89,6 +89,7 @@ function ContactPage() {
             name="attachment"
             className="inputfile"
             onChange={handleFileChange}
+            accept=".stl"
             ref={fileInputRef} // Add this line to reference the input
             style={{ display: 'none' }} // Hide the actual file input
           />
