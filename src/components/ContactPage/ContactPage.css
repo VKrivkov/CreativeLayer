@@ -148,7 +148,7 @@
     font-family: Inter;
 
     height: 60px;
-    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow and lift effect */
+    transition: box-shadow 0.3s ease-out; /* Smooth transition for the glow and lift effect */
 
     
 }
@@ -161,7 +161,7 @@
 
   
   .submit-button:hover {
-    box-shadow: 0 0px 30px rgb(233, 159, 14, 0.5); 
+    box-shadow: 0 0px 30px rgb(233, 159, 14, 0.3); 
 }
 
 
@@ -214,7 +214,116 @@
 }
   
 
+.radio-buttons{
+  display: flex;
+  gap: 50px;
+  color: #f5f5f5;
+  font-family: Inter;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
 
+
+.radio-buttons label {
+  margin-right: 20px; /* Space between the label and the next radio button */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:10px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #090909;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f5f5f5;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #E99F0E;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+
+.file-upload {
+  font-family: Inter;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  background-color: #090909;
+  color:#7F7F7F;
+  margin-bottom: 35px;
+}
+
+.file-upload .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-upload label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.file-upload span {
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.file-upload button {
+  width:100px;
+  padding:15px;
+  background-color: #E99F0E;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload button:hover {
+  background-color: #ffc44f;
+}
+
+/* Styling for when the file is selected */
+.inputfile + label span:after {
+  content: attr(data-file-name);
+}
 
 
 

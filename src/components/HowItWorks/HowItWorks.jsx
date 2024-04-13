@@ -12,7 +12,7 @@ const HowItWorks = () => {
     <div className='how-it-works'>
       <div className='how-heading'> 
         <h1 className='headline-gallery'>How it works?</h1>
-        <p>Step right up to our team of design daredevils! We're not your average designers—we're here to turn your wildest dreams into design reality. Whether you're craving sleek and modern, classic and timeless, or something so unique it'll make heads spin, we've got the skills and creativity to make it happen.</p>
+        <p> This is an absolutely useless text, nobody will read it anyway. But if you're genuinely interested and the information below doesn't answer all your questions, please contact us. Contact details are provided below.</p>
       </div>
       <div className='cards-container'>
         <Card

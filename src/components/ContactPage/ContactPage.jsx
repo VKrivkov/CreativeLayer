@@ -1,107 +1,113 @@
-import React, { useState }  from 'react'
+import React, { useState, useRef } from 'react';
 import './ContactPage.css'
 
 
 function ContactPage() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [fileName, setFileName] = useState('Choose file...');
+  const fileInputRef = useRef(null);
 
 
+  const [formData, setFormData] = useState({
+    email: '',
+    printingType: 'SLA', // Default to SLA
+    message: '',
+    file: null,
+  });
 
   const handleInvalid = (e) => {
     e.preventDefault(); // Prevent the browser from showing default error bubble / hint
     const fieldName = e.target.name;
-    let message = '';
-    if (!e.target.validity.valid) {
-      switch (fieldName) {
-        case 'email':
-          message = "contact.errors.validEmail";
-          break;
-        case 'firstName':
-          message = "contact.errors.firstName";
-          break;
-        case 'lastName':
-          message = "contact.errors.lastName";
-          break;
-        case 'phoneNumber':
-          message = "contact.errors.phoneNumber";
-          break;
-        default:
-          message = "contact.errors.requiredField";
-      }
-    }
+    let message = `contact.errors.${fieldName}`;
     setFormErrors({ ...formErrors, [fieldName]: message });
   };
 
-
-
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    time: '',
-    email: '',
-    phoneNumber: '',
-    message: '',
-    agreeToPrivacyPolicy: true,
-  });
-
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    // Update the form data state
+    const { name, value, type, files } = e.target;
     setFormData({
       ...formData,
+      [name]: type === 'file' ? files[0] : value,
     });
-  
-    // Clear the error message for this input
-    setFormErrors({
-      ...formErrors,
-      [name]: '',
-    });
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
+    setFormErrors({ ...formErrors, [name]: '' });
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFormData({ ...formData, file: file });
+      setFileName(file.name);
+    } else {
+      setFormData({ ...formData, file: null });
+      setFileName('Choose file...');
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: "9dee5aad-0a3f-4497-a111-b9bb8e1a3219",
-          ...formData,
-        }),
-      });
+    // const formDataToSubmit = new FormData();
+    // formDataToSubmit.append("subject", "New Submission from Creative Layer");
+    // formDataToSubmit.append('email', formData.email);
+    // formDataToSubmit.append('printingType', formData.printingType);
+    // formDataToSubmit.append('message', formData.message);
+    // formDataToSubmit.append('Agree to privacy policy', 'true');
   
-      if (response.ok) {
-        setIsSubmitted(true);
-        // Reset form fields here if necessary
+    // // Checking the file size using the ref
+    // if (fileInputRef.current && fileInputRef.current.files[0]) {
+    //   const file = fileInputRef.current.files[0];
+    //   const filesize = file.size / 1024; // Size in KB
+  
+    //   if (filesize > 4000) {
+    //     alert("Please upload file less than 4 MB");
+    //     return;
+    //   }
+  
+    //   //formDataToSubmit.append('attachment', file);
+    // }
+    // for (let [key, value] of formDataToSubmit.entries()) {
+    //   console.log(`${key}: ${value instanceof Blob ? `${value.name}, ${value.size}` : value}`);
+    // }
+
+
+    // // Use the Fetch API to make the request
+    // try {
+    //   const response = await fetch("https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8", {
+    //     method: "POST",
+    //     body: formDataToSubmit, // This should be formDataToSubmit, not formData
+    //   });
+  
+    //   const json = await response.json();
+  
+      // if (response.ok) {
+       // console.log(json.message);
+        // Reset state to clear the form
         setFormData({
-          firstName: '',
-          lastName: '',
-          time: '',
           email: '',
-          phoneNumber: '',
+          printingType: 'SLA',
           message: '',
-          agreeToPrivacyPolicy: true,
+          file: null,
         });
-        // Optionally hide the popup after some time
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        // Handle server errors or invalid responses
-        alert("Submission failed, please try again.");
-      }
-    } catch (error) {
-      // Handle network errors
-      console.error("Error during submission:", error);
-      alert("Submission failed, please check your internet connection and try again.");
-    }
+        setFileName('Choose file...');
+
+    //   } 
+    //   else {
+    //     console.error("Error:", response);
+    //   }
+    // } catch (error) {
+    //   console.error("Error during submission:", error);
+    //   console.log(await response.text());
+    // }
+  };
+  
+
+     
+
+  const handleButtonClick = (e) => {
+    // Prevent default form submission if the button is within a form
+    e.preventDefault();
+    // Trigger click on the actual file input
+    fileInputRef.current.click();
   };
 
 
@@ -116,88 +122,71 @@ function ContactPage() {
         <h1>OR</h1>
 
 
-      <form  className="contact-form2" onSubmit={handleSubmit}>
-      <div className="input-row">
-          <div>
-            <input
-              type="text"
-              name="firstName"
-              value={formData.firstName}
-              onChange={handleChange}
-              className={formErrors.firstName ? 'invalid' : ''}
-              onInvalid={handleInvalid} // Add this prop to all inputs
-              placeholder='contact.firstNamePlaceholder'
-              required
-            />
-            {formErrors.firstName && <div className="error-message">{formErrors.firstName}</div>}
-          </div>
-
-          <div>
-          <input
-            type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className={formErrors.lastName ? 'invalid' : ''}
-            onInvalid={handleInvalid} // Add this prop to all inputs
-            placeholder='contact.lastNamePlaceholder'
-            required
-          />
-            {formErrors.lastName && <div className="error-message">{formErrors.lastName}</div>}
-          </div>
-        </div>
-      
+        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8" encType="multipart/form-data" method="POST">
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           className={formErrors.email ? 'invalid' : ''}
-          onInvalid={handleInvalid} // Add this prop to all inputs
-          placeholder='contact.emailPlaceholder'
+          onInvalid={handleInvalid}
+          placeholder='Enter your email'
           required
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         />
         {formErrors.email && <div className="error-message">{formErrors.email}</div>}
 
+        <div className="file-upload">
+          <input
+            id="attachment"
+            type="file"
+            name="attachment"
+            className="inputfile"
+            onChange={handleFileChange}
+            ref={fileInputRef} // Add this line to reference the input
+            style={{ display: 'none' }} // Hide the actual file input
+          />
+          <label htmlFor="attachment" className="file-upload-label">
+            <span>{fileName}</span>
+            {/* Attach the click handler to the button */}
+            <button type="button" onClick={handleButtonClick}>Browse</button>
+          </label>
+        </div>
 
-        <input
-          type="tel"
-          name="phoneNumber"
-          value={formData.phoneNumber}
-          onChange={handleChange}
-          className={formErrors.phoneNumber ? 'invalid' : ''}
-          onInvalid={handleInvalid} // Add this prop to all inputs
-
-          placeholder='contact.phoneNumberPlaceholder'
-          required
-          pattern="\+?[0-9]{7,15}"
-
-        />
-        {formErrors.phoneNumber && <div className="error-message">{formErrors.phoneNumber}</div>}
-
-
-        <input
-          type="text"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          placeholder='contact.callTimePlaceholder'
-        />
+        <div className='radio-buttons'>
+          <label>
+            <input
+              type="radio"
+              name="printingType"
+              value="SLA"
+              checked={formData.printingType === 'SLA'}
+              onChange={handleChange}
+            />
+            SLA
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="printingType"
+              value="FDM"
+              checked={formData.printingType === 'FDM'}
+              onChange={handleChange}
+            />
+            FDM
+          </label>
+        </div>
 
         <textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder='contact.messagePlaceholder'
-
+          placeholder='Type your message here'
         ></textarea>
 
-        <p>contact.privacyPolicy'</p>
+        
 
-        <button type="submit" className="submit-button">contact.submitButton'</button>
-        {isSubmitted && <div className="success-popup"> contact.successMessage' </div>}
-
+        <button type="submit" className="submit-button">Submit</button>
+        {isSubmitted && <div className="success-popup">Thank you for your submission!</div>}
       </form>
     </div>
   )

@@ -47,11 +47,34 @@
     color: #f5f5f5;
 }
 
-.sla-text-container p, .fdm-text-container p{
+.sla-text-container ul, .fdm-text-container ul{
+    list-style: none;
+    padding: 0;
+    align-self: center;
+}
+
+.sla-text-container li, .fdm-text-container li{
     font-weight: 300;
     font-size: 20px;
     font-family: Inter;
     color: #f5f5f5;
+    padding-left: 30px; /* Creates space for bullet points */
+    text-align: left;
+    position: relative; /* Needed for absolute positioning of pseudo-elements */
+    margin-bottom: 10px; /* Adjust the space between list items */
+}
+
+.sla-text-container li::before, .fdm-text-container li::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('../../assets/Ellipse.svg'); /* Adjust path as needed */
+    width: 7px; /* Adjust size as needed */
+    height: 7px; /* Adjust size as needed */
+    background-size: cover;
+    border-radius: 50%; /* Makes it round */
 }
 
 .sla-image-container, .fdm-image-container{

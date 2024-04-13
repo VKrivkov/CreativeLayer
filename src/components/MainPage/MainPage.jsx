@@ -67,8 +67,8 @@ const MainPage = () => {
           <h3>IDEAS</h3>
         </div>
         <div className='main-page-fun'>
-          <p>-Our 3d printing studio is here to print any of your models.</p> 
-          <p> -Any models?  </p>  
+          <p>-Our 3d printing studio is here to print any of your ideas.</p> 
+          <p> -Any ideas?  </p>  
           <strong> -All of them.</strong>
         </div>
       </header>
