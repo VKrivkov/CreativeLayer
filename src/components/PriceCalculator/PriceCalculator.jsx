@@ -104,12 +104,12 @@ const PriceCalculator = () => {
         }
         parseSTLFile(formData.file).then(volume => {
             // Example pricing adjustments
-            const basePricePerCubicMM = 0.00005; // Base price per cubic mm might need to be much lower
-            const slaMultiplier = 4; // Hypothetical multiplier for SLA to account for higher material and processing costs
-            const fdmMultiplier = 1; // Standard multiplier for FDM
+            const basePricePerCubicMM = 0.00002; // Base price per cubic mm might need to be much lower
+            const slaMultiplier = 67.1; // Hypothetical multiplier for SLA to account for higher material and processing costs
+            const fdmMultiplier = 18.3; // Standard multiplier for FDM
     
             let materialMultiplier = formData.printingType === 'SLA' ? slaMultiplier : fdmMultiplier;
-            let effectiveVolume = volume * 0.6; // Assuming 40% of the volume is the actual material used (60% infill + supports)
+            let effectiveVolume = volume * 0.3; // Assuming 40% of the volume is the actual material used (60% infill + supports)
     
             // Adjusting price calculation for a more realistic pricing
             const calculatedPrice = effectiveVolume * basePricePerCubicMM * materialMultiplier;
