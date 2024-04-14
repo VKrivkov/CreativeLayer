@@ -104,7 +104,7 @@ const PriceCalculator = () => {
         }
         parseSTLFile(formData.file).then(volume => {
             // Example pricing adjustments
-            const basePricePerCubicMM = 0.001; // Base price per cubic mm might need to be much lower
+            const basePricePerCubicMM = 0.00005; // Base price per cubic mm might need to be much lower
             const slaMultiplier = 4; // Hypothetical multiplier for SLA to account for higher material and processing costs
             const fdmMultiplier = 1; // Standard multiplier for FDM
     
