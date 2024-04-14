@@ -6,6 +6,7 @@ import Footer from "./Footer/Footer";
 
 import ContactPage from "./ContactPage/ContactPage";
 import HowItWorks from "./HowItWorks/HowItWorks";
+import PriceCalculator from "./PriceCalculator/PriceCalculator";
 
 
 
@@ -15,4 +16,4 @@ import HowItWorks from "./HowItWorks/HowItWorks";
 
 
 
-export {MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks} 
+export {MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks, PriceCalculator} 

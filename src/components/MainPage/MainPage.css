@@ -59,8 +59,9 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
   gap: 20px;
+  flex-wrap: wrap;
+  margin: 10px 50px;
   
 }
 
@@ -84,6 +85,27 @@ html, body {
     margin-bottom: 100px;
   }
   
+  .imgBox {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(12, 1fr);
+  }
+ 
+  .bento-image.size-4 { 
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .bento-image.size-3 { 
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .bento-image.size-2 {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+    .bento-image.size-1 { 
+      grid-column: span 2;
+      grid-row: span 2;
+    }
   .bento-image {
     border: 1px solid #f5f5f5;
     width: 100%;
@@ -103,6 +125,9 @@ html, body {
   }
   
 
+  .imgBox-medium{
+    display: none;
+  }
 
   @media (max-width:1600px){
    
@@ -111,7 +136,9 @@ html, body {
       font-weight:800;
     }
 
-
+    .imgBox{
+      height: 250px;
+    }
     .main-page-headline h1{
       font-size: 125px;
       
@@ -128,38 +155,51 @@ html, body {
 
     .main-page-headline h1{
       font-size: 100px;
-      
+    }
+
+    .imgBox {
+      height: 200px;
+      gap: 12px;
     }
   }
 
+  @media (max-width: 1024px){
+    .imgBox {
+      display: none;
+    }
 
-  @media screen and (min-width: 640px) {
+    .imgBox-medium{
+      margin-top: 20px;
+      display: grid;
+      max-width: 90vw;
+      height: 200px;
+      gap: 15px;
+      transition: grid-template-rows 0.2s, grid-template-columns 0.2s;
+      margin-bottom: 100px;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(7, 1fr);
+    }
+    .bento-image.size-4 { 
+      
+      grid-column: 4/5;
+      grid-row: 2/-1;
+    }
+    .bento-image.size-3 { 
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+    .bento-image.size-2 {
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+    .bento-image.size-1 { 
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+  }
+  /* @media screen and (min-width: 640px) {
     .imgBox {
       grid-template-columns: repeat(6, 1fr);
     }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .imgBox {
-      grid-template-rows: repeat(2, minmax(0, 1fr));
-      grid-template-columns: repeat(12, 1fr);
-    }
-   
-    .bento-image.size-4 { /* Takes up 1 cell */
-        grid-column: span 1;
-        grid-row: span 1;
-      }
-      .bento-image.size-3 { /* Takes up 2 cells horizontally */
-        grid-column: span 2;
-        grid-row: span 1;
-      }
-      .bento-image.size-2 { /* Takes up 2 cells vertically */
-        grid-column: span 1;
-        grid-row: span 2;
-      }
-      .bento-image.size-1 { /* Takes up 2x2 cells */
-        grid-column: span 2;
-        grid-row: span 2;
-      }
-    /* Add more nth-of-type rules if there are more images with unique positions/sizes */
-  }
+  } */

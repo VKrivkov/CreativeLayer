@@ -1,5 +1,5 @@
 import React, {useEffect }  from 'react'
-import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks} from './components';
+import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks, PriceCalculator} from './components';
 
 import './App.css'
 
@@ -24,6 +24,7 @@ function App() {
      <MainPage/>
      <HowItWorks/>
      <PrintTypes/>
+     <PriceCalculator/>
      <Gallery/>
      <ContactPage/>
      <Footer/>

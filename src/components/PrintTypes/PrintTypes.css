@@ -46,6 +46,13 @@
     font-family: Inter;
     color: #f5f5f5;
 }
+.sla-text-container p, .fdm-text-container p{
+    font-weight: 300;
+    font-size: 20px;
+    font-family: Inter;
+    color: #f5f5f5;
+    margin-bottom: 35px;
+}
 
 .sla-text-container ul, .fdm-text-container ul{
     list-style: none;

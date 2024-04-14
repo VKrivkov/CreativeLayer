@@ -52,74 +52,18 @@
 
 
 @media (max-width: 1050px){
-  .text-block h6{
-    display:none;
-  }
-  .text-block p{
-    color: #090909;
-    margin-left: 80px;
-    margin-right: 80px;
-    text-align: justify;
-    width: 100%;
-  }
 
-  .headline-gallery{
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-  }
-
-  .text-block{
-    margin-bottom: 50px;
-  }
-
-  .headline-gallery{
-
-    text-align: center;
-
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 
 @media (max-width: 650px){
-  .gallery-container {
-    padding-top: 50px;
-  }
 
   .text-block p{
-    color: #090909;
-    margin: 0px 50px 0px 50px;
-
-    text-align: justify;
-    width: 100%;
     font-size: 16px;
-  }
-
-  .headline-gallery{
-    font-family: Playfair Display, sans-serif; /* Replace with the font of your choice */
-    font-size: 40px;
-    font-weight: 300;
-    color: #66952F; /* Adjust the color value to match the desired shade of green */
-    margin-top: 35px;
-    margin-bottom: 35px;
-
-  }
-
-  .text-block{
-    margin-bottom: 35px;
   }
 }
 
 
 @media (max-width:420px){
-  .text-block p{
-    color: #090909;
-    margin-left: 25px;
-    margin-right: 25px;
-    text-align: justify;
-    width: 100%;
-    font-size: 16px;
-  }
+
 }
