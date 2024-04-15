@@ -5,7 +5,7 @@ const PriceCalculator = () => {
     const [formErrors, setFormErrors] = useState({});
     const [fileName, setFileName] = useState('Choose file (.STL)...');
     const fileInputRef = useRef(null);
-    const [price, setPrice] = useState('');
+    const [price, setPrice] = useState('--$');
 
     function parseSTLFile(file) {
         return new Promise((resolve, reject) => {
@@ -25,7 +25,6 @@ const PriceCalculator = () => {
                 // Binary STL format parsing
                 let volume = 0;
                 const numTriangles = (new DataView(arrayBuffer, 80, 4)).getUint32(0, true);
-                console.log(`Number of Triangles: ${numTriangles}`); // Debugging output
                 let offset = 84;
     
                 for (let i = 0; i < numTriangles; i++) {
@@ -37,7 +36,6 @@ const PriceCalculator = () => {
                     offset += 50; // Move to the next triangle block
                 }
     
-                console.log(`Total Calculated Volume: ${Math.abs(volume)}`); // Final volume output
                 resolve(Math.abs(volume));
             };
     
@@ -113,8 +111,7 @@ const PriceCalculator = () => {
     
             // Adjusting price calculation for a more realistic pricing
             const calculatedPrice = effectiveVolume * basePricePerCubicMM * materialMultiplier;
-            setPrice(`Price: ${calculatedPrice.toFixed(2)} $`);
-            console.log(`Calculated Volume: ${volume} mm³, Effective Volume: ${effectiveVolume} mm³`);
+            setPrice(`${calculatedPrice.toFixed(2)} $`);
         }).catch(error => {
             alert("Error processing STL file: " + error);
         });
@@ -132,56 +129,63 @@ const PriceCalculator = () => {
     return (
       <div className="price-calculator" id='price'>
         <div className='how-heading'> 
-            <h1 className='headline-gallery'>How it works?</h1>
-            <p> This is an absolutely useless text, nobody will read it anyway. But if you're genuinely interested and the information below doesn't answer all your questions, please contact us. Contact details are provided below.</p>
+            <h1 className='headline-gallery'>Price calculator</h1>
+            <p>  Use our STL Price Calculator to get an estimated cost for 3D printing your model. Simply upload your .STL file, select the printing technology (SLA or FDM), and click "Calculate" to see an approximate price.</p>
         </div>
-  
-        <form className="contact-form2" onSubmit={handleSubmit} enctype="multipart/form-data" >
-  
-          <div className="file-upload">
-            <input
-              id="attachment"
-              type="file"
-              name="attachment"
-              className="inputfile"
-              onChange={handleFileChange}
-              accept=".stl"
-              ref={fileInputRef} // Add this line to reference the input
-              style={{ display: 'none' }} // Hide the actual file input
-            />
-            <label htmlFor="attachment" className="file-upload-label">
-              <span>{fileName}</span>
-              {/* Attach the click handler to the button */}
-              <button type="button" onClick={handleButtonClick}>Browse</button>
-            </label>
-          </div>
-  
-          <div className='radio-buttons'>
-            <label>
-              <input
-                type="radio"
-                name="printingType"
-                value="SLA"
-                checked={formData.printingType === 'SLA'}
-                onChange={handleChange}
-              />
-              SLA
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="printingType"
-                value="FDM"
-                checked={formData.printingType === 'FDM'}
-                onChange={handleChange}
-              />
-              FDM
-            </label>
-          </div>
-  
-          <button type="submit" onClick={calculatePrice} className="submit-button">Calculate</button>
-        </form>
-        {price && <div className='estimated-price'>{price}</div>}
+        <div className='price-calculator-container'>
+            <form className="contact-form" onSubmit={handleSubmit} enctype="multipart/form-data" >
+    
+            <div className="file-upload">
+                <input
+                id="attachment"
+                type="file"
+                name="attachment"
+                className="inputfile"
+                onChange={handleFileChange}
+                accept=".stl"
+                ref={fileInputRef} // Add this line to reference the input
+                style={{ display: 'none' }} // Hide the actual file input
+                />
+                <label htmlFor="attachment" className="file-upload-label">
+                <span>{fileName}</span>
+                {/* Attach the click handler to the button */}
+                <button type="button" onClick={handleButtonClick}>Browse</button>
+                </label>
+            </div>
+    
+            <div className='radio-buttons'>
+                <label>
+                <input
+                    type="radio"
+                    name="printingType"
+                    value="SLA"
+                    checked={formData.printingType === 'SLA'}
+                    onChange={handleChange}
+                />
+                SLA
+                </label>
+                <label>
+                <input
+                    type="radio"
+                    name="printingType"
+                    value="FDM"
+                    checked={formData.printingType === 'FDM'}
+                    onChange={handleChange}
+                />
+                FDM
+                </label>
+            </div>
+    
+            <button type="submit" onClick={calculatePrice} className="submit-button">Calculate</button>
+            </form>
+
+            <div className='price-container'>
+                <h6> Estimated price:</h6>
+                {price && <div className='estimated-price'>{price}</div>}
+                <p>Be aware that the provided calculator just allows to have the understanding of the costs. Actual prices can vary, depending on different materials, production difficulties, etc</p>
+            </div>
+
+        </div>
       </div>
     )
   }
