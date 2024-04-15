@@ -5,7 +5,7 @@ import FDM from '../../assets/FDM.jpg';
 
 const PrintTypes = () => {
   return (
-    <div className='print-types'>
+    <div className='print-types' id='types'>
         <div className='sla-container'>
             <div className='sla-text-container'> 
               <h6>SLA 3D Printing</h6>

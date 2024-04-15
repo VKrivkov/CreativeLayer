@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import './PriceCalculator.css'
+import QuestionIcon from '../../assets/QuestionIcon.svg'
 
 const PriceCalculator = () => {
     const [formErrors, setFormErrors] = useState({});
@@ -7,7 +8,48 @@ const PriceCalculator = () => {
     const fileInputRef = useRef(null);
     const [price, setPrice] = useState('--$');
 
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (!section) return;
+      
+        // Calculate the position of the section
+        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+        console.log('Section ID:', sectionId, 'Section Top:', sectionTop);
+    
+        // Define the smooth scroll function
+        const smoothScroll = (targetPosition) => {
+          const startPosition = window.pageYOffset;
+          const distance = targetPosition - startPosition;
+          const duration = 800; // Duration of the scroll animation in milliseconds
+          let startTime = null;
+      
+          const animation = (currentTime) => {
+            if (startTime === null) startTime = currentTime;
+            const timeElapsed = currentTime - startTime;
+            const nextScrollPosition = ease(timeElapsed, startPosition, distance, duration);
+      
+            window.scrollTo(0, nextScrollPosition);
+      
+            if (timeElapsed < duration) requestAnimationFrame(animation);
+          };
+      
+          const ease = (t, b, c, d) => {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+          };
+      
+          requestAnimationFrame(animation);
+        };
+      
+        // Execute the smooth scroll function
+        smoothScroll(sectionTop);
+      };
+
+
     function parseSTLFile(file) {
+
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
     
@@ -63,7 +105,7 @@ const PriceCalculator = () => {
     }
     const [formData, setFormData] = useState({
       email: '',
-      printingType: 'SLA', // Default to SLA
+      printingType: 'FDM', 
       message: '',
       file: null,
     });
@@ -109,9 +151,11 @@ const PriceCalculator = () => {
             let materialMultiplier = formData.printingType === 'SLA' ? slaMultiplier : fdmMultiplier;
             let effectiveVolume = volume * 0.3; // Assuming 40% of the volume is the actual material used (60% infill + supports)
     
-            // Adjusting price calculation for a more realistic pricing
             const calculatedPrice = effectiveVolume * basePricePerCubicMM * materialMultiplier;
-            setPrice(`${calculatedPrice.toFixed(2)} $`);
+            const price_min = calculatedPrice * 0.85;
+            const price_max = calculatedPrice * 1.15;
+
+            setPrice(`${price_min.toFixed(2)} -  ${price_max.toFixed(2)} $`);
         }).catch(error => {
             alert("Error processing STL file: " + error);
         });
@@ -130,7 +174,7 @@ const PriceCalculator = () => {
       <div className="price-calculator" id='price'>
         <div className='how-heading'> 
             <h1 className='headline-gallery'>Price calculator</h1>
-            <p>  Use our STL Price Calculator to get an estimated cost for 3D printing your model. Simply upload your .STL file, select the printing technology (SLA or FDM), and click "Calculate" to see an approximate price.</p>
+            <p>  Use our STL Price Calculator to get an approximate cost for 3D printing your model. Simply upload your .STL file, select the printing technology (SLA or FDM), and click "Calculate" to see the price.</p>
         </div>
         <div className='price-calculator-container'>
             <form className="contact-form" onSubmit={handleSubmit} enctype="multipart/form-data" >
@@ -154,16 +198,7 @@ const PriceCalculator = () => {
             </div>
     
             <div className='radio-buttons'>
-                <label>
-                <input
-                    type="radio"
-                    name="printingType"
-                    value="SLA"
-                    checked={formData.printingType === 'SLA'}
-                    onChange={handleChange}
-                />
-                SLA
-                </label>
+
                 <label>
                 <input
                     type="radio"
@@ -174,15 +209,30 @@ const PriceCalculator = () => {
                 />
                 FDM
                 </label>
+
+                <label>
+                <input
+                    type="radio"
+                    name="printingType"
+                    value="SLA"
+                    checked={formData.printingType === 'SLA'}
+                    onChange={handleChange}
+                />
+                SLA
+                </label>
+              
+                <img style={{cursor: 'pointer'}} onClick={() => scrollToSection('types')} src={QuestionIcon} alt='3D Printing types' />
+
+                
             </div>
     
             <button type="submit" onClick={calculatePrice} className="submit-button">Calculate</button>
             </form>
 
             <div className='price-container'>
-                <h6> Estimated price:</h6>
+                <h6> Approximate price:</h6>
                 {price && <div className='estimated-price'>{price}</div>}
-                <p>Be aware that the provided calculator just allows to have the understanding of the costs. Actual prices can vary, depending on different materials, production difficulties, etc</p>
+                <p>Be aware that actual prices can vary, depending on different materials, production difficulties, etc. To recieve the evaluation of the costs for your model please fill up the form in the contact section</p>
             </div>
 
         </div>

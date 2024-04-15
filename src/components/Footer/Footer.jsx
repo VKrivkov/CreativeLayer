@@ -58,6 +58,7 @@ const Footer = () => {
         </div>
         <div className='navigation-footer'>
           <a onClick={() => scrollToSection('home')} className="footer-link">Home</a>
+          <a onClick={() => scrollToSection('price')} className="footer-link">Calculator</a>
           <a onClick={() => scrollToSection('gallery')} className="footer-link">3D-Models</a>
           <a onClick={() => scrollToSection('contact')} className="footer-link">Contact</a>
         </div>

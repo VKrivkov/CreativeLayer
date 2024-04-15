@@ -163,7 +163,7 @@ html, body {
     }
   }
 
-  @media (max-width: 1024px){
+  @media (max-width: 1050px){
     .imgBox {
       display: none;
     }

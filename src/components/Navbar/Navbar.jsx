@@ -59,6 +59,7 @@ const Navbar = () => {
       </div>
       <div className='navbar-links'>
         <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
+        <a onClick={() => scrollToSection('price')} className="nav-link">Calculator</a>
         <a onClick={() => scrollToSection('gallery')} className="nav-link">3D-Models</a>
         <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
 
