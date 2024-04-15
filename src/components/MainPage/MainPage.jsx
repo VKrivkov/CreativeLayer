@@ -69,7 +69,7 @@ const MainPage = () => {
         </div>
         <div className='main-page-fun'>
           <p>-Our 3d printing studio is here to print any of your ideas.</p> 
-          <div style={{display: "flex", gap:"20px", flexWrap:"wrap"}}>
+          <div className='two-things'>
             <p> -Any ideas?  </p>  
             <strong> -All of them.</strong>
           </div>
@@ -87,6 +87,16 @@ const MainPage = () => {
       </div>
       <div className='imgBox-medium'>
       {images.slice(0, 6).map((image, index) => (
+          <img
+            key={index}
+            className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
+            src={image}
+            alt={`3D printing cyprus`}
+          />
+        ))}
+      </div>
+      <div className='imgBox-small'>
+      {images.slice(0, 4).map((image, index) => (
           <img
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
