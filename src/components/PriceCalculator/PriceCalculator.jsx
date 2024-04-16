@@ -6,7 +6,7 @@ const PriceCalculator = () => {
     const [formErrors, setFormErrors] = useState({});
     const [fileName, setFileName] = useState('Choose file (.STL)...');
     const fileInputRef = useRef(null);
-    const [price, setPrice] = useState('--$');
+    const [price, setPrice] = useState('--€');
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
@@ -155,7 +155,7 @@ const PriceCalculator = () => {
             const price_min = calculatedPrice * 0.85;
             const price_max = calculatedPrice * 1.15;
 
-            setPrice(`${price_min.toFixed(2)} -  ${price_max.toFixed(2)} $`);
+            setPrice(`${price_min.toFixed(2)} -  ${price_max.toFixed(2)} €`);
         }).catch(error => {
             alert("Error processing STL file: " + error);
         });

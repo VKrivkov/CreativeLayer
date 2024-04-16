@@ -59,12 +59,14 @@ function ContactPage() {
   return (
     <div className="contact-form-container" id='contact'>
         <div className="contact-info">
-          <h2>Contact me!</h2>
-          <p><strong>Telegram:</strong> contactInfo.address</p>
-          <p><strong>Email:</strong> contactInfo.phone'</p>
-          <p><strong>Instagram:</strong> contactInfo.email'</p>
+          <h1 className='headline-gallery'>Contact me!</h1>
+          <div className='contact-text-block'>
+            <p><strong>Telegram:</strong> contactInfo.address</p>
+            <p><strong>Email:</strong> contactInfo.phone'</p>
+            <p><strong>Instagram:</strong> contactInfo.email'</p>
+          </div>
         </div>
-        <h1>OR</h1>
+        <h2>OR</h2>
 
 
         <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8" enctype="multipart/form-data" method="POST">

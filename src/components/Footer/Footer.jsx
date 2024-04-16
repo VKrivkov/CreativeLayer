@@ -49,10 +49,9 @@ const Footer = () => {
       <div className='footer-first-level'>
         <div className='company-container'>
           <img onClick={() => scrollToSection('home')} src={Logo} alt="Logo" />
-          <p>Lev pidor</p>
         </div>
         <div className='contact-info-container'>
-          <h6>Contact me</h6>
+          <h6 style={{color:'#E99F0E'}}>Contact me</h6>
           <p>footer.telephone</p>
           <p>footer.email</p>
         </div>
