@@ -63,6 +63,11 @@
         padding: 50px 80px;
     }
 
+    .cards-container{
+        margin-top: 80px;
+        gap:40px;
+    }
+
 }
 
 @media (max-width:1050px){
@@ -70,6 +75,7 @@
     .how-heading {
         padding: 35px 50px;
     }
+ 
 }
 
 @media(max-width:700px){
@@ -79,6 +85,7 @@
 
     .cards-container{
         margin-top: 60px;
+        gap:30px;
     }
 
     .how-heading p{
@@ -87,14 +94,17 @@
     .how-heading {
         padding: 20px 35px;
     }
+    .how-heading p{
+        margin-top: 15px;
+    }
 }
 
 @media(max-width:450px){
     .how-it-works{
         padding: 40px 0px;
     }
-
-    .how-heading {
-        padding: 20px 35px;
+    .cards-container{
+        margin-top: 40px;
+        gap:20px;
     }
 }

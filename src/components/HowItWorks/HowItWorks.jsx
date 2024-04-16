@@ -17,13 +17,13 @@ const HowItWorks = () => {
       <div className='cards-container'>
         <Card
             img = {UploadIcon}
-            h = 'Send the model'
+            h = 'Submit the model'
             // p = "Create your 3D model, or download it and upload the 3D print file to our upload form below. Don't have a 3D file? We can help."
             num = '1'
         /> 
         <Card
             img = {PriceIcon}
-            h = 'Make the deal'
+            h = 'Confirm the order'
             // p = 'We will give you a price based on your 3D model and the material you choose.'
             num = '2'
         />  
