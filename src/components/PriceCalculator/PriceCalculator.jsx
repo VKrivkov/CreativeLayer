@@ -181,16 +181,16 @@ const PriceCalculator = () => {
     
             <div className="file-upload">
                 <input
-                id="attachment"
+                id="file"
                 type="file"
-                name="attachment"
+                name="file"
                 className="inputfile"
                 onChange={handleFileChange}
                 accept=".stl"
                 ref={fileInputRef} // Add this line to reference the input
                 style={{ display: 'none' }} // Hide the actual file input
                 />
-                <label htmlFor="attachment" className="file-upload-label">
+                <label htmlFor="file" className="file-upload-label">
                 <span>{fileName}</span>
                 {/* Attach the click handler to the button */}
                 <button type="button" onClick={handleButtonClick}>Browse</button>
