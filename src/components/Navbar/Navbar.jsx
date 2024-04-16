@@ -1,8 +1,8 @@
-// src/components/Navbar.jsx
-import React from 'react';
+import React, { useState }  from 'react';
 import './Navbar.css';
 import Logo from "../../assets/Logo.svg"
-
+import BurgerIcon from '../../assets/BurgerIcon.svg'; // Path to burger menu icon
+import CloseIcon from '../../assets/CloseIcon.svg'; // Path to close menu icon
 import Icon1 from "../../assets/FacebookIcon.png"
 import Icon2 from "../../assets/InstaIcon.png"
 import Icon3 from "../../assets/TwitterIcon.png"
@@ -11,6 +11,11 @@ import Icon3 from "../../assets/TwitterIcon.png"
 
 
 const Navbar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -53,27 +58,30 @@ const Navbar = () => {
   
 
   return (
-    <div className='navbar'>
-      <div className='navbar-logo'>
+    <div className={`navbar ${isMenuOpen ? "show" : ""}`}>
+      <div className='navbar-brand'>
         <img src={Logo} alt="Logo" />
       </div>
-      <div className='navbar-links'>
+      <div className={`navbar-center ${isMenuOpen ? "show" : ""}`}>
         <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
         <a onClick={() => scrollToSection('price')} className="nav-link">Calculator</a>
         <a onClick={() => scrollToSection('gallery')} className="nav-link">3D-Models</a>
         <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
 
-        <div className='social-media'>
+        <div className={`navbar-side ${isMenuOpen ? "show" : ""}`}>
           <img src={Icon1} alt="Facebook" />
           <img src={Icon2} alt="Instagram" />
           <img src={Icon3} alt="Twitter" />
         </div>
+
       </div>
+
+      <div className="burger-menu" onClick={toggleMenu}>
+          <img src={isMenuOpen ? CloseIcon : BurgerIcon} alt="Menu" className="menu-icon" />
+        </div>
     </div>
   );
 };
-
-
 
 
 
