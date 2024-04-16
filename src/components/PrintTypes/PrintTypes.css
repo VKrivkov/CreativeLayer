@@ -39,7 +39,6 @@
     font-family: Inter;
     color: #f5f5f5;
     margin-bottom: 35px;
-
 }
 .sla-text-container p, .fdm-text-container p{
     font-weight: 300;
@@ -107,7 +106,108 @@
 .print-types h1{
     color: #E99F0E;
     font-family: Inter;
-    font-size: 100px;
+    font-size: 80px;
     font-weight:900;
     padding: 35px;    
+}
+
+
+@media(max-width:1280px){
+    .sla-text-container p, .fdm-text-container p{
+        font-size: 18px;
+    }
+
+    .sla-text-container li, .fdm-text-container li{
+        font-size: 18px;
+        padding-left: 25px; /* Creates space for bullet points */
+    }
+
+    .print-types h1{
+        font-size: 70px; 
+    }
+
+    .sla-text-container, .fdm-text-container{
+        padding: 50px 80px;
+    }
+
+
+    .sla-text-container h6, .fdm-text-container h6{
+        font-size: 40px;
+    }
+    .sla-container{
+        margin-top: 80px;
+    }
+    .fdm-container{
+        margin-bottom: 80px;
+    }
+}
+
+@media(max-width: 1050px){
+    .sla-text-container, .fdm-text-container{
+        padding: 35px 50px;
+    }
+}
+
+@media(max-width: 700px){
+    .sla-text-container, .fdm-text-container{
+        padding: 20px 35px;
+    }
+
+    .sla-text-container h6, .fdm-text-container h6{
+        margin-bottom: 15px;
+        font-size: 35px;
+    }
+
+    .print-types h1{
+        font-size: 50px; 
+        padding: 20px;
+    }
+
+    .sla-container{
+        margin-top: 60px;
+    }
+    .fdm-container{
+        margin-bottom: 60px;
+    }
+    .sla-text-container p, .fdm-text-container p{
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+
+    .sla-container, .fdm-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .fdm-container{
+        flex-direction: column-reverse;
+    }
+
+    .sla-image-container img, .fdm-image-container img {
+        border-radius: 0px 0px 15px 15px; /* Adjust based on the specific container */
+        border-top: 1px solid #f5f5f5; /* SLA image container */
+        height: 230px;
+    }
+}
+
+@media (max-width:450px) {
+
+    .sla-text-container h6, .fdm-text-container h6{
+        font-size: 30px;
+    }
+
+    .print-types h1{
+        font-size: 40px; 
+        padding: 15px;
+    }
+
+    .sla-container{
+        margin-top: 40px;
+    }
+    .fdm-container{
+        margin-bottom: 40px;
+    }
+
+    .sla-image-container img, .fdm-image-container img {
+       height: 100%;
+    }
 }

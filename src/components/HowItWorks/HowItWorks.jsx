@@ -12,7 +12,7 @@ const HowItWorks = () => {
     <div className='how-it-works'>
       <div className='how-heading'> 
         <h1 className='headline-gallery'>How it works?</h1>
-        <p> This is an absolutely useless text, nobody will read it anyway. But if you're genuinely interested and the information below doesn't answer all your questions, please contact us. Contact details are provided below.</p>
+        <p> This is an absolutely useless text, nobody will read it anyway. But if you're genuinely interested and the information below doesn't answer all your questions, please contact us.</p>
       </div>
       <div className='cards-container'>
         <Card

@@ -22,7 +22,7 @@
     transform: translate(-75%,-50%);
     color: #E99F0E;
     font-family: Inter;
-    font-size: 60px;
+    font-size: 50px;
     font-weight:700;
 }
 
@@ -44,7 +44,7 @@
     }
 
     .card-container h1{
-        font-size: 50px;
+        font-size: 40px;
     }
 }
 
@@ -67,7 +67,7 @@
         margin-top: 15px;
     }
     .card-container h1{
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .card-container{
