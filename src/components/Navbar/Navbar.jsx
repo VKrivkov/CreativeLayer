@@ -3,9 +3,9 @@ import './Navbar.css';
 import Logo from "../../assets/Logo.svg"
 import BurgerIcon from '../../assets/BurgerIcon.svg'; // Path to burger menu icon
 import CloseIcon from '../../assets/CloseIcon.svg'; // Path to close menu icon
-import Icon1 from "../../assets/FacebookIcon.png"
-import Icon2 from "../../assets/InstaIcon.png"
-import Icon3 from "../../assets/TwitterIcon.png"
+import Icon1 from "../../assets/TgIcon.svg"
+import Icon2 from "../../assets/InstaIcon.svg"
+import Icon3 from "../../assets/TwitterIcon.svg"
 
 
 
@@ -69,9 +69,9 @@ const Navbar = () => {
         <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
 
         <div className={`navbar-side ${isMenuOpen ? "show" : ""}`}>
-          <img src={Icon1} alt="Facebook" />
-          <img src={Icon2} alt="Instagram" />
-          <img src={Icon3} alt="Twitter" />
+          <a href='https://t.me/CreativeLayer'> <img src={Icon1} alt="Telegram" /> </a>
+          <a href='https://www.instagram.com/lulupu.3d/'> <img src={Icon2} alt="Instagram" /> </a>
+          <a href='https://twitter.com/LLupulus'> <img src={Icon3} alt="Twitter" /> </a>
         </div>
 
       </div>

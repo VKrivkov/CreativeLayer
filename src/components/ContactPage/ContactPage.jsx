@@ -61,9 +61,9 @@ function ContactPage() {
         <div className="contact-info">
           <h1 className='headline-gallery'>Contact me!</h1>
           <div className='contact-text-block'>
-            <p><strong>Telegram:</strong> contactInfo.address</p>
-            <p><strong>Email:</strong> contactInfo.phone'</p>
-            <p><strong>Instagram:</strong> contactInfo.email'</p>
+            <p><strong>Telegram:</strong> @CreativeLayer</p>
+            <p><strong>WhatsApp:</strong> https://wa.me/35797816242</p>
+            <p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p>
           </div>
         </div>
         <h2>OR</h2>
@@ -82,6 +82,8 @@ function ContactPage() {
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         />
         {formErrors.email && <div className="error-message">{formErrors.email}</div>}
+
+        <p>Upload your model (not more than 5MB)</p>
 
         <div className="file-upload">
           <input
@@ -132,7 +134,7 @@ function ContactPage() {
         ></textarea>
 
         
-
+        <p>By sending this form, you agree to our privacy policy.</p>
         <button type="submit" className="submit-button">Submit</button>
       </form>
     </div>

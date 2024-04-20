@@ -52,8 +52,7 @@ const Footer = () => {
         </div>
         <div className='contact-info-container'>
           <h6 style={{color:'#E99F0E'}}>Contact me</h6>
-          <p>footer.telephone</p>
-          <p>footer.email</p>
+          <p>creative0.0layer@gmail.com</p>
         </div>
         <div className='navigation-footer'>
           <a onClick={() => scrollToSection('home')} className="footer-link">Home</a>
@@ -63,10 +62,10 @@ const Footer = () => {
         </div>
         <div className='nobody-reads-container'>
           <div>
-            <p>privacyPolicy</p>
-            <p>footer.termsCondition</p>
+            <p>Privacy Policy</p>
+            <p>Terms & Conditions</p>
           </div>
-          <p className='Rights'>footer.right</p>
+          <p className='Rights'>© 2024, All rights reserved</p>
         </div>
       </div>
     </div>
