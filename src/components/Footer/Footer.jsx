@@ -62,8 +62,8 @@ const Footer = () => {
         </div>
         <div className='nobody-reads-container'>
           <div>
-            <p>Privacy Policy</p>
-            <p>Terms & Conditions</p>
+            <a href='https://www.termsfeed.com/live/d0d010f5-8595-402f-9861-1c7a2983e992'><p>Privacy Policy</p></a>
+            <a href='https://www.termsfeed.com/live/bf129419-7b70-4169-9545-0031703c1caa'><p>Terms & Conditions</p></a>
           </div>
           <p className='Rights'>© 2024, All rights reserved</p>
         </div>
