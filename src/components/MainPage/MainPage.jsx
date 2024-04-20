@@ -81,7 +81,6 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            loading="lazy"
             alt={`3D printing image ${index + 1}`}
           />
         ))}
@@ -92,7 +91,6 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            loading="lazy"
             alt={`3D printing image ${index + 1}`}
           />
         ))}
@@ -103,7 +101,6 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            loading="lazy"
             alt={`3D printing image ${index + 1}`}
           />
         ))}
