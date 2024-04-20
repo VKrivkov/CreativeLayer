@@ -47,11 +47,11 @@ const GalleryComponent = ({images}) => {
 
             <div className="gallery-pagination">
             {images.map((_, index) => (
-            <button 
+            <div 
                 key={index} 
                 className={index === currentSlide ? 'pagination-dotActive' : 'pagination-dot'}>
                 <img src={index === currentSlide ? currPage : otherPage} alt="Pagination Dot" />
-            </button>
+            </div>
             ))}
             </div>
 

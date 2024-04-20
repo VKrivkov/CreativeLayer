@@ -49,7 +49,7 @@ const MainPage = () => {
             newRevealed[index] = true;
             return newRevealed;
           });
-        }, index * 150);
+        }, index * 100);
       });
     
     };
