@@ -34,7 +34,7 @@ const GalleryComponent = ({images}) => {
 
             {images.map((src, index) => (
             <div className={getSlideClass(index)} key={index}>
-                <img src={src} alt={`Slide ${index}`} className="gallery-image" loading='lazy'/>
+                <img src={src} alt={`Slide ${index}`} className="gallery-image"/>
             </div>
             ))}
 
