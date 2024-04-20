@@ -81,7 +81,8 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            alt={`3D printing cyprus`}
+            loading="lazy"
+            alt={`3D printing image ${index + 1}`}
           />
         ))}
       </div>
@@ -91,7 +92,8 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            alt={`3D printing cyprus`}
+            loading="lazy"
+            alt={`3D printing image ${index + 1}`}
           />
         ))}
       </div>
@@ -101,7 +103,8 @@ const MainPage = () => {
             key={index}
             className={`bento-image (${(index)}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
-            alt={`3D printing cyprus`}
+            loading="lazy"
+            alt={`3D printing image ${index + 1}`}
           />
         ))}
       </div>
