@@ -1,7 +1,7 @@
 import React from 'react';
 import './PrintTypes.css';
-import SLA from '../../assets/SLA.jpg';
-import FDM from '../../assets/FDM.jpg';
+import SLA from '../../assets/SLA.webp';
+import FDM from '../../assets/FDM.webp';
 
 const PrintTypes = () => {
   return (

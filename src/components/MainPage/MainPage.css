@@ -22,7 +22,7 @@ html, body {
 .main-page {
     width: 100%;
     position: relative; /* For positioning the scroll indicator */
-    background-image: url(../../assets/BG5.jpg);
+    background-image: url(../../assets/BG5.webp);
     background-size:cover;
     display: flex;
     flex-direction: column;
