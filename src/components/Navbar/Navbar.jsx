@@ -63,10 +63,10 @@ const Navbar = () => {
         <img src={Logo} alt="Logo" />
       </div>
       <div className={`navbar-center ${isMenuOpen ? "show" : ""}`}>
-        <a onClick={() => scrollToSection('home')} className="nav-link">Home</a>
-        <a onClick={() => scrollToSection('price')} className="nav-link">Calculator</a>
-        <a onClick={() => scrollToSection('gallery')} className="nav-link">3D-Models</a>
-        <a onClick={() => scrollToSection('contact')} className="nav-link">Contact</a>
+        <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="nav-link">Home</a>
+        <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="nav-link">Calculator</a>
+        <a href="#gallery" onClick={(e) => {e.preventDefault(); scrollToSection('gallery');}} className="nav-link">3D-Models</a>
+        <a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}} className="nav-link">Contact</a>
 
         <div className={`navbar-side ${isMenuOpen ? "show" : ""}`}>
           <a href='https://t.me/CreativeLayer'> <img src={Icon1} alt="Telegram" /> </a>

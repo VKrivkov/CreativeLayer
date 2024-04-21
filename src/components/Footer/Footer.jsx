@@ -55,10 +55,10 @@ const Footer = () => {
           <p>creative0.0layer@gmail.com</p>
         </div>
         <div className='navigation-footer'>
-          <a onClick={() => scrollToSection('home')} className="footer-link">Home</a>
-          <a onClick={() => scrollToSection('price')} className="footer-link">Calculator</a>
-          <a onClick={() => scrollToSection('gallery')} className="footer-link">3D-Models</a>
-          <a onClick={() => scrollToSection('contact')} className="footer-link">Contact</a>
+          <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="footer-link">Home</a>
+          <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="footer-link">Calculator</a>
+          <a href="#gallery" onClick={(e) => {e.preventDefault(); scrollToSection('gallery');}} className="footer-link">3D-Models</a>
+          <a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}} className="footer-link">Contact</a>
         </div>
         <div className='nobody-reads-container'>
           <div>
