@@ -17,7 +17,7 @@ const PrintTypes = () => {
               </ul>
             </div>
             <div className='sla-image-container'> {/* Corrected class name */}
-              <img src={SLA} alt='SLA printer'/>
+              <img src={SLA} alt='SLA printer' loading='lazy'/>
             </div>
         </div>
 
@@ -25,7 +25,7 @@ const PrintTypes = () => {
 
         <div className='fdm-container'>
           <div className='fdm-image-container'> {/* Corrected class name */}
-            <img src={FDM} alt='FDM printer'/>
+            <img src={FDM} alt='FDM printer' loading='lazy'/>
           </div>
           <div className='fdm-text-container'> 
               <h6>FDM 3D Printing</h6>
