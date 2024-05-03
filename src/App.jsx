@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks, PriceCalculator} from './components';
 
-import { MainPage2, Navbar2, PrintTypes2, Gallery2, ContactPage2, Footer2, HowItWorks2, PriceCalculator2} from './components-el';
+import { MainPage2, Navbar2, PrintTypes2, Gallery2, Footer2, HowItWorks2, PriceCalculator2} from './components-el';
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -33,7 +33,7 @@ function App() {
             <PrintTypes2/>
             <PriceCalculator2/>
             <Gallery2/>
-            <ContactPage2/>
+            <ContactPage/>
             <Footer2/>
             </>
           } />
