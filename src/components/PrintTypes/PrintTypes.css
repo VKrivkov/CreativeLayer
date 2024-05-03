@@ -103,7 +103,7 @@
 }
 
 
-.print-types h1{
+.print-types h3{
     color: #E99F0E;
     font-family: Inter;
     font-size: 80px;
@@ -122,7 +122,7 @@
         padding-left: 25px; /* Creates space for bullet points */
     }
 
-    .print-types h1{
+    .print-types h3{
         font-size: 70px; 
     }
 
@@ -158,7 +158,7 @@
         font-size: 35px;
     }
 
-    .print-types h1{
+    .print-types h3{
         font-size: 50px; 
         padding: 20px;
     }
@@ -196,7 +196,7 @@
         font-size: 30px;
     }
 
-    .print-types h1{
+    .print-types h3{
         font-size: 40px; 
         padding: 15px;
     }

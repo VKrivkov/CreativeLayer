@@ -59,11 +59,11 @@ function ContactPage() {
   return (
     <div className="contact-form-container" id='contact'>
         <div className="contact-info">
-          <h1 className='headline-gallery'>Contact me!</h1>
+          <h2 className='headline-gallery'>Contact me!</h2>
           <div className='contact-text-block'>
-            <p><strong>Telegram:</strong> @CreativeLayer</p>
-            <p><strong>WhatsApp:</strong> https://wa.me/35797816242</p>
-            <p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p>
+            <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
+            <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
+            <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
           </div>
         </div>
         <h2>OR</h2>

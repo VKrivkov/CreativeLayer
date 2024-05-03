@@ -16,15 +16,15 @@ const PrintTypes = () => {
                 <li>High cost</li>
               </ul>
             </div>
-            <div className='sla-image-container'> {/* Corrected class name */}
+            <div className='sla-image-container'>
               <img src={SLA} alt='SLA printer' loading='lazy'/>
             </div>
         </div>
 
-        <h1>VS</h1>
+        <h3>VS</h3>
 
         <div className='fdm-container'>
-          <div className='fdm-image-container'> {/* Corrected class name */}
+          <div className='fdm-image-container'>
             <img src={FDM} alt='FDM printer' loading='lazy'/>
           </div>
           <div className='fdm-text-container'> 

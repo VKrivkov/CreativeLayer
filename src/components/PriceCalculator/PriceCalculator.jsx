@@ -173,12 +173,12 @@ const PriceCalculator = () => {
     return (
       <div className="price-calculator" id='price'>
         <div className='how-heading'> 
-            <h1 className='headline-gallery'>Price calculator</h1>
-            <p>  Use our STL Price Calculator to get an approximate cost for 3D printing your model. Simply upload your .STL file, select the printing technology (SLA or FDM), and click "Calculate" to see the price.</p>
+            <h2 className='headline-gallery'>Price calculator</h2>
+            <p>  Use our STL Price Calculator to get an approximate cost for 3D printing your model. Simply upload your .STL file, select the 3D printing technology (SLA or FDM), and click "Calculate" to see the price.</p>
         </div>
         <div className='price-calculator-container'>
             <form className="contact-form" onSubmit={handleSubmit} enctype="multipart/form-data" >
-    
+            <p>Upload your 3D model (not more than 5MB)</p>
             <div className="file-upload">
                 <input
                 id="file"

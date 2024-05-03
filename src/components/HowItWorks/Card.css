@@ -17,7 +17,7 @@
     height: 100px;
 }
 
-.card-container h1{
+.card-container h3{
     position: absolute;
     transform: translate(-75%,-50%);
     color: #E99F0E;
@@ -43,7 +43,7 @@
         margin-top: 35px;
     }
 
-    .card-container h1{
+    .card-container h3{
         font-size: 40px;
     }
 }
@@ -66,7 +66,7 @@
         font-size: 25px;
         margin-top: 15px;
     }
-    .card-container h1{
+    .card-container h3{
         font-size: 35px;
     }
 
@@ -82,7 +82,7 @@
     .card-container h6{
         font-size: 20px;
     }
-    .card-container h1{
+    .card-container h3{
         font-size: 30px;
     }
     .card-container{

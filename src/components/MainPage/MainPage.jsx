@@ -55,12 +55,12 @@ const MainPage = () => {
     <div className="main-page" id='home'>
       <header className='text-head'>
         <div className='main-page-headline'>
-          <h2>PRINT</h2>
-          <h1>YOUR</h1>
+          <h1>PRINT</h1>
+          <h2>YOUR</h2>
           <h3>IDEAS</h3>
         </div>
         <div className='main-page-fun'>
-          <p>-Our 3d printing studio is here to print any of your ideas.</p>
+          <p>-Our 3D Printing studio in Cyprus is here to print any of your ideas.</p>
           <div className='two-things'>
             <p>-Any ideas?</p>
             <strong>-All of them.</strong>
@@ -74,7 +74,7 @@ const MainPage = () => {
             className={`bento-image (${index}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
             loading='lazy'
-            alt={`3D printing image ${index + 1}`}
+            alt={`3D Printing example image ${index + 1}`}
           />
         ))}
       </div>
@@ -85,7 +85,7 @@ const MainPage = () => {
             className={`bento-image (${index}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
             loading='lazy'
-            alt={`3D printing image ${index + 1}`}
+            alt={`3D Printing image ${index + 1}`}
           />
         ))}
       </div>
@@ -96,7 +96,7 @@ const MainPage = () => {
             className={`bento-image (${index}) ${getSize(index)} ${revealed[index] ? 'reveal' : ''}`}
             src={image}
             loading='lazy'
-            alt={`3D printing image ${index + 1}`}
+            alt={`3D Printing in Cyprus ${index + 1}`}
           />
         ))}
       </div>

@@ -11,8 +11,8 @@ const HowItWorks = () => {
   return (
     <div className='how-it-works'>
       <div className='how-heading'> 
-        <h1 className='headline-gallery'>How it works?</h1>
-        <p> This is an absolutely useless text, nobody will read it anyway. But if you're genuinely interested and the information below doesn't answer all your questions, please contact us.</p>
+        <h2 className='headline-gallery'>How it works?</h2>
+        <p> Submit your model, confirm the order, and we'll handle the 3D printing. Straightforward and efficient, our studio ensures quality results every time. Get started with 3D printing in Cyprus today — efficient, reliable, and local. If you need help or have questions, just reach out.</p>
       </div>
       <div className='cards-container'>
         <Card
