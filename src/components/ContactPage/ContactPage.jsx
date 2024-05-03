@@ -69,7 +69,7 @@ function ContactPage() {
         <h2>OR</h2>
 
 
-        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/0f7a399f9b3d9f7d41d894007f0f80f8" enctype="multipart/form-data" method="POST">
+        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/creative0.0layer@gmail.com" enctype="multipart/form-data" method="POST">
         <input
           type="email"
           name="email"
