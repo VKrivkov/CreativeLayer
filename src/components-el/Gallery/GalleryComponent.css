@@ -1,0 +1,163 @@
+.gallery-slider {
+    display: flex;
+    justify-content: center; /* Center the children (slides) horizontally */
+    position: relative;
+    overflow: hidden;
+    height: 551px;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 1065px; /* Adjust as needed */
+    height: 511px;
+    opacity: 0; /* Make non-active slides semi-transparent */
+    transition: 0.4s ease;
+
+  }
+  
+  .slide.active {
+    z-index: 2;
+    opacity: 1; /* Make the active slide fully opaque */
+
+  }
+  
+  /* Place previous slide to the left */
+  .slide.prev {
+    transform: translateX(calc(-100% - 20px)); /* Slide width + margin */
+    opacity: 1; /* Make the active slide fully opaque */
+    filter:brightness(30%);
+
+  }
+  
+  /* Place next slide to the right */
+  .slide.next {
+    transform: translateX(calc(100% + 20px)); /* Slide width + margin */
+    opacity: 1; /* Make the active slide fully opaque */
+    filter:brightness(30%);
+  }
+  
+  .arrowLeft, .arrowRight {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-52.5%);
+    z-index: 3;
+    cursor: pointer;
+
+  }
+  
+  .arrowLeft {
+    left: 100px; /* 20px from the left edge of the active slide */
+  }
+
+  .arrowLeft img, .arrowRight img{
+    width: 60px;
+    height: 60px;
+  }
+  
+  .arrowRight {
+    right: 100px; /* 20px from the right edge of the active slide */
+  }
+
+
+
+
+  .gallery-image {
+    position: absolute; /* Make it relative to position arrows */
+    width: 100%; /* Make the image responsive */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 15px;
+    border: 1px solid #f5f5f5;
+    display: block; /* Display as block to fill width of .slide */
+  }
+  
+.gallery-pagination{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.pagination-dot, .pagination-dotActive{
+  border: none;
+  background:none;
+}
+
+
+@media (max-width: 1100px){
+
+  .slide {
+    width: 800px; /* Adjust as needed */
+    height: 400px;
+  }
+
+
+  
+  .arrowLeft {
+    left: 50px; /* 20px from the left edge of the active slide */
+  }
+
+  .arrowLeft img, .arrowRight img{
+    width: 50px;
+    height: 50px;
+  }
+  
+  .arrowRight {
+    right: 50px; /* 20px from the right edge of the active slide */
+  }
+
+  .gallery-slider {
+    height: 420px;
+  }
+}
+
+
+
+@media (max-width: 820px){
+
+  .slide {
+    width: 500px; /* Adjust as needed */
+    height: 250px;
+  }
+  .gallery-slider {
+    height: 270px;
+  }
+
+
+
+}
+
+
+@media (max-width:650px){
+  .arrowLeft {
+    left: 20px; /* 20px from the left edge of the active slide */
+  }
+
+  .arrowRight {
+    right: 20px; /* 20px from the right edge of the active slide */
+  }
+
+}
+
+@media (max-width: 530px){
+
+  .slide {
+    width: 300px; /* Adjust as needed */
+    height: 200px;
+  }
+
+  .gallery-slider {
+    height: 220px;
+  }
+}
+
+
+@media (max-width: 420px){
+  .arrowLeft {
+    left: 20px; /* 20px from the left edge of the active slide */
+  }
+
+  .arrowRight {
+    right: 20px; /* 20px from the right edge of the active slide */
+  }
+}

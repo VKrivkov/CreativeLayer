@@ -1,0 +1,420 @@
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+    background-image: url('../../assets/BG7.webp');
+    background-size: cover;
+    background-position:center;
+    border-bottom: 1px solid #f5f5f5;    
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    align-items: center;
+    }
+
+
+
+  .contact-form-container h2{
+    color: #E99F0E;
+    font-family: Inter;
+    font-size: 80px;
+    font-weight:700;
+    padding: 35px;
+}
+  
+  .contact-info {
+    flex-basis: 50%;
+    padding: 50px 100px 50px 85px;
+    background-color: #090909;
+    border: 1px solid #f5f5f5;
+    border-radius: 15px;
+
+  }
+
+
+
+
+.contact-info p{
+  margin-bottom: 15px;
+  color: #f5f5f5;
+}
+
+.contact-text-block{
+  margin-top: 35px;
+
+}
+
+
+
+
+
+
+
+  .contact-form2 {
+    width: 650px;
+    padding: 50px;
+    background-color: #090909;
+    border-radius: 15px;
+    border: 1px solid #f5f5f5;
+    justify-content: end;
+
+  }
+
+
+  .contact-form2 input::placeholder,
+.contact-form2 textarea::placeholder {
+  font-family: Inter; /* Specify the font-family of your choice */
+  font-size: 16px; /* Set the size of your placeholder font */
+  color: #f5f5f5; /* Set the color of your placeholder text */
+  opacity: 0.5; 
+}
+ 
+  .headline-contact{
+    text-align: left;
+    font-family: Inter;
+    font-size: 50px;
+    font-weight: 300;
+    color: #E99F0E; /* Adjust the color value to match the desired shade of green */
+    margin-bottom: 75px;
+    margin-top: 0;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .input-row input {
+    flex: 1;
+    
+  }
+  
+  .contact-form2 input,
+  .contact-form2 textarea,
+  .contact-form2 button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 35px;
+    border: 1px solid #d9d9d9;
+    color: #f5f5f5;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 300;
+  }
+  
+
+  .contact-form2 button {
+    border-radius: 10px;
+    border:none;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .contact-form2 input:focus,
+.contact-form2 textarea:focus {
+  outline-color: #E99F0E;
+}
+
+
+  .contact-form2 input, .contact-form2 textarea{
+    border-radius: 4px;
+  }
+  .contact-form2 textarea {
+    margin-bottom: 20px;
+    height: 150px;
+  }
+
+
+  
+  .submit-button {
+    background-color: #E99F0E;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: Inter;
+
+    height: 60px;
+    transition: box-shadow 0.3s ease-out; /* Smooth transition for the glow and lift effect */
+
+    
+}
+
+.contact-form2 input [type = 'checkbox']{
+    color: #E99F0E;
+    accent-color : #E99F0E;
+}
+
+
+  
+  .submit-button:hover {
+    box-shadow: 0 0px 30px rgb(233, 159, 14, 0.3); 
+}
+
+
+  /* Invalid input field */
+.contact-form2 input.invalid,
+.contact-form2 textarea.invalid {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #d21c1c;
+}
+
+
+/* Error message styling */
+.error-message {
+    position: relative;
+    margin-top: -35px;
+    margin-bottom: 18px;
+    color: red;
+    font-family: Inter;
+    font-size: 14px;
+    text-align: left;
+}
+
+
+.contact-form2 p{
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    opacity: 0.3;
+}
+
+  
+
+.radio-buttons{
+  display: flex;
+  gap: 50px;
+  color: #f5f5f5;
+  font-family: Inter;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+
+
+.radio-buttons label {
+  margin-right: 20px; /* Space between the label and the next radio button */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:10px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #090909;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #f5f5f5;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  background-color: #E99F0E;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+
+.file-upload {
+  font-family: Inter;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f5f5f5;
+  border-radius: 4px;
+  background-color: #090909;
+  color:#f5f5f5;
+  margin-bottom: 35px;
+}
+
+.file-upload .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-upload label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.file-upload span {
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  flex-grow: 1;
+  margin-left: 15px;
+}
+
+.file-upload button {
+  width:100px;
+  padding:15px;
+  background-color: #E99F0E;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload button:hover {
+  background-color: #ffc44f;
+}
+
+.inputfile + label span:after {
+  content: attr(data-file-name);
+}
+
+
+@media (max-width:1280px) {
+
+  .contact-form-container {
+    font-size: 18px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .contact-info {
+    padding: 50px 80px 50px 65px;
+  }
+  
+  .contact-form2 {
+    width: 560px;
+    padding: 50px;
+    background-color: #090909;
+    border-radius: 15px;
+    border: 1px solid #f5f5f5;
+    justify-content: end;
+  }
+
+
+  .contact-form2 input,
+  .contact-form2 textarea,
+  .contact-form2 button {
+    font-size: 18px;
+  }
+
+  .radio-buttons{
+    gap: 35px;
+    font-size: 18px;
+  }
+
+  .contact-form-container h2{
+    font-size: 70px;
+  }
+  .file-upload {
+    font-size: 18px;
+  }
+    
+}
+
+
+@media (max-width:1050px) {
+  .contact-info {
+    padding: 35px 50px 35px 35px;
+  }
+
+
+  .contact-form2 {
+    width: 500px;
+    padding: 35px;
+  }
+}
+
+@media (max-width:700px) {
+  .contact-form-container {
+    font-size: 16px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .contact-info {
+    width: 90vw;
+    padding: 20px 35px 20px 25px;
+  }
+
+  .contact-info p{
+    margin-bottom: 10px;
+  }
+  .contact-form2 {
+    width: 90vw;
+  }
+  .contact-text-block{
+    margin-top: 20px;
+  }
+  .contact-form-container h2{
+    font-size: 50px;
+    padding: 20px;
+  }
+
+  .contact-form2 input::placeholder,
+  .contact-form2 textarea::placeholder {
+    font-size: 14px; /* Set the size of your placeholder font */
+  }
+   
+  .contact-form2 input,
+  .contact-form2 textarea,
+  .contact-form2 button {
+    font-size: 16px;
+  }
+
+
+  .file-upload {
+    font-family: Inter;
+    font-size: 16px;
+  }
+  .file-upload button {
+    width:80px;
+    font-size: 14px;
+  }
+
+  .radio-buttons{
+    font-size: 16px;
+  }
+}
+
+@media (max-width:450px) {
+  .contact-form-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+
+
