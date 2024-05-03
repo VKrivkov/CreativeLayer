@@ -70,6 +70,7 @@ function ContactPage() {
 
 
         <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/creative0.0layer@gmail.com" enctype="multipart/form-data" method="POST">
+        <input type="hidden" name="_url" value="https://creative-layer.com/"></input>
         <input
           type="email"
           name="email"
