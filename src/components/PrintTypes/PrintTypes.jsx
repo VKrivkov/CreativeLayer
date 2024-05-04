@@ -8,9 +8,9 @@ const PrintTypes = () => {
     <div className='print-types' id='types'>
         <div className='sla-container'>
             <div className='sla-text-container'> 
-              <h6>SLA 3D Printing</h6>
-              <p>SLA 3D Printing produces detailed models with smooth finishes, ideal for precise prototypes, serving clients seeking quality and accuracy.</p>
-              <p><strong>Examples of implementation:</strong> miniatures and figurines, prototypes of parts and mechanisms, jewelry</p>
+              <h2>What is SLA 3D Printing</h2>
+              <p>SLA (Stereolithography) 3D Printing uses ultraviolet light to harden precisely liquid resin into high-quality solid objects. SLA produces detailed models with smooth finishes.</p>
+              <p><strong>Examples of implementation:</strong> miniatures and figurines, highly detailed models an mechanisms, jewelry</p>
               <ul>
                 <li>High surface quality and detail</li>
                 <li>Minimal post-processing required</li>
@@ -29,9 +29,9 @@ const PrintTypes = () => {
             <img src={FDM} alt='FDM printer' loading='lazy'/>
           </div>
           <div className='fdm-text-container'> 
-              <h6>FDM 3D Printing</h6>
-              <p>FDM 3D Printing offers versatility, cost-effectiveness, and durability, catering to projects requiring robust, functional prototypes and end-use parts.</p>
-              <p><strong>Examples of application:</strong> gears and mechanical parts, casings and shells, cosplay costume elements</p>
+              <h2>What is FDM 3D Printing</h2>
+              <p>FDM (Fused Deposition Modeling) 3D Printing builds objects by heating and extruding plastic through a small nozzle, layer by layer. FDM produces durable objects using a variety of materials.</p>
+              <p><strong>Examples of application:</strong> prototypes, casings and shells, cosplay costume elements</p>
               <ul>
                 <li>Wide range of materials available</li>
                 <li>Ability to print large objects</li>

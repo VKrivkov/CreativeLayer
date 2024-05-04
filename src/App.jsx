@@ -25,7 +25,7 @@ function App() {
           <Footer/>
           </>
         } />
-      <Route path="/el"  lang="el-CY" element={
+      <Route path="/el"  lang="el" element={
             <>
             <Navbar2/>
             <MainPage2/>

@@ -174,7 +174,7 @@ const PriceCalculator = () => {
       <div className="price-calculator" id='price'>
         <div className='how-heading'> 
             <h2 className='headline-gallery'>Price calculator</h2>
-            <p>  Use our STL Price Calculator to get an approximate cost for 3D printing your model. Simply upload your .STL file, select the 3D printing technology (SLA or FDM), and click "Calculate" to see the price.</p>
+            <p>Use our free STL Price Calculator to quickly find out how much it costs to 3D print your model in Cyprus. Just upload your .STL file, select SLA or FDM 3D printing technology, and hit "Calculate" to see the price. Our tool makes it easy to get estimates for 3D printing projects, whether you're using detailed SLA or durable FDM methods.</p>
         </div>
         <div className='price-calculator-container'>
             <form className="contact-form" onSubmit={handleSubmit} enctype="multipart/form-data" >
