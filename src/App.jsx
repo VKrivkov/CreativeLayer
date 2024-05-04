@@ -4,6 +4,7 @@ import { MainPage, Navbar, PrintTypes, Gallery, ContactPage, Footer, HowItWorks,
 import { MainPage2, Navbar2, PrintTypes2, Gallery2, Footer2, HowItWorks2, PriceCalculator2} from './components-el';
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import HeadTags from './components/HeadTags'; // Ensure the correct path is set
 
 import './App.css'
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <Router>
       <LangUpdater />
+      <HeadTags /> 
       <Routes>
         <Route path="/" element={
           <>
@@ -45,7 +47,7 @@ function App() {
     const location = useLocation();
   
     useEffect(() => {
-      const htmlLangAttribute = location.pathname.startsWith('/el') ? 'el-CY' : 'en-CY';
+      const htmlLangAttribute = location.pathname.startsWith('/el') ? 'el' : 'en';
       document.documentElement.lang = htmlLangAttribute;
     }, [location]);
   
