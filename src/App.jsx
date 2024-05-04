@@ -12,8 +12,8 @@ import './App.css'
 function App() {
   return (
     <Router>
-      <LangUpdater />
       <HeadTags /> 
+      <LangUpdater />
       <Routes>
         <Route path="/" element={
           <>
