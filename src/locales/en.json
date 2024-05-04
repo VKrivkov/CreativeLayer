@@ -1,0 +1,12 @@
+{
+  "contact": {
+    "headline": "Contact me!",
+    "uploadLabel": "Upload your model (not more than 5MB)",
+    "uploadSpan": "Upload .STL (max 5MB)",
+    "or" : "OR",
+    "emailPlaceholder": "Enter your email",
+    "messagePlaceholder": "Type your message here",
+    "submitButtonText": "Submit",
+    "privacyPolicy": "By sending this form, you agree to our privacy policy."
+  }
+}

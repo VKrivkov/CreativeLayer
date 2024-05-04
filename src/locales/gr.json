@@ -1,0 +1,12 @@
+{
+  "contact": {
+    "headline": "Γράψτε μου!",
+    "uploadLabel": "Ανεβάστε το μοντέλο σας (μέχρι 5MB)",
+    "uploadSpan": "Ανέβασμα .STL (μέγιστο 5MB)",
+    "or": "Ή",
+    "emailPlaceholder": "Εισαγάγετε το email σας",
+    "messagePlaceholder": "Πληκτρολογήστε το μήνυμά σας εδώ",
+    "submitButtonText": "Υποβολή",
+    "privacyPolicy": "Αποστέλλοντας αυτή τη φόρμα, συμφωνείτε με την πολιτική μας για την απορρήτου."
+  }
+}

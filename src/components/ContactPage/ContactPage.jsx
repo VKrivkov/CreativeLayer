@@ -1,12 +1,25 @@
-import React, { useState, useRef } from 'react';
-import './ContactPage.css'
-
+import React, { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
+import i18n from '../../i18n'; // Adjust the path to match where your i18n setup file is located
+import './ContactPage.css';
 
 function ContactPage() {
+  const location = useLocation();
+  const { t, i18n } = useTranslation();
   const [formErrors, setFormErrors] = useState({});
-  const [fileName, setFileName] = useState('Choose file (.STL)...');
+  const [fileName, setFileName] = useState(t('contact.uploadSpan')); // Set initial state with translation
   const fileInputRef = useRef(null);
 
+  useEffect(() => {
+    const pathLng = location.pathname.split('/')[1]; // Get language code from URL
+    const language = pathLng === 'el' ? 'el' : 'en';
+    if (i18n.language !== language) {
+      i18n.changeLanguage(language).then(() => {
+        setFileName(t('contact.uploadLabel')); // Update file label after language change
+      });
+    }
+  }, [location, i18n, t]); // React to changes in location, i18n instance, or translation function
 
   const [formData, setFormData] = useState({
     email: '',
@@ -18,7 +31,7 @@ function ContactPage() {
   const handleInvalid = (e) => {
     e.preventDefault(); // Prevent the browser from showing default error bubble / hint
     const fieldName = e.target.name;
-    let message = "Please, enter a valid email";
+    let message = t('contact.validEmailMessage'); // Assuming you have a translation for this
     setFormErrors({ ...formErrors, [fieldName]: message });
   };
 
@@ -38,38 +51,33 @@ function ContactPage() {
       setFileName(file.name);
     } else {
       setFormData({ ...formData, file: null });
-      setFileName('Choose file...');
+      setFileName(t('contact.chooseFile'));  // Translation for default file label
     }
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Handle the form submission logic here
   };
-  
-
-     
 
   const handleButtonClick = (e) => {
-    // Prevent default form submission if the button is within a form
-    e.preventDefault();
-    // Trigger click on the actual file input
-    fileInputRef.current.click();
+    e.preventDefault(); // Prevent default form submission if the button is within a form
+    fileInputRef.current.click(); // Trigger click on the actual file input
   };
-
 
   return (
     <div className="contact-form-container" id='contact'>
-        <div className="contact-info">
-          <h2 className='headline-gallery'>Contact me!</h2>
-          <div className='contact-text-block'>
-            <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
-            <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
-            <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
-          </div>
+      <div className="contact-info">
+        <h2 className='headline-gallery'>{t('contact.headline')}</h2>
+        <div className='contact-text-block'>
+          <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
+          <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
+          <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
         </div>
-        <h2>OR</h2>
+      </div>
+      <h2>{t('contact.or')}</h2>  {/* Assuming 'or' is also translated */}
 
-
-        <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/073b02508c4ba23d7356487802268a1d" enctype="multipart/form-data" method="POST">
+      <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/073b02508c4ba23d7356487802268a1d" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="_url" value="https://creative-layer.com/"></input>
         <input
           type="email"
@@ -78,13 +86,13 @@ function ContactPage() {
           onChange={handleChange}
           className={formErrors.email ? 'invalid' : ''}
           onInvalid={handleInvalid}
-          placeholder='Enter your email'
+          placeholder={t('contact.emailPlaceholder')}
           required
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
         />
         {formErrors.email && <div className="error-message">{formErrors.email}</div>}
 
-        <p>Upload your model (not more than 5MB)</p>
+        <p>{t('contact.uploadLabel')}</p>
 
         <div className="file-upload">
           <input
@@ -94,12 +102,11 @@ function ContactPage() {
             className="inputfile"
             onChange={handleFileChange}
             accept=".stl"
-            ref={fileInputRef} // Add this line to reference the input
-            style={{ display: 'none' }} // Hide the actual file input
+            ref={fileInputRef}
+            style={{ display: 'none' }}
           />
           <label htmlFor="attachment" className="file-upload-label">
             <span>{fileName}</span>
-            {/* Attach the click handler to the button */}
             <button type="button" onClick={handleButtonClick}>Browse</button>
           </label>
         </div>
@@ -113,7 +120,7 @@ function ContactPage() {
               checked={formData.printingType === 'SLA'}
               onChange={handleChange}
             />
-            SLA
+            {t('SLA')}
           </label>
           <label>
             <input
@@ -123,7 +130,7 @@ function ContactPage() {
               checked={formData.printingType === 'FDM'}
               onChange={handleChange}
             />
-            FDM
+            {t('FDM')}
           </label>
         </div>
 
@@ -131,15 +138,14 @@ function ContactPage() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder='Type your message here'
+          placeholder={t('contact.messagePlaceholder')}
         ></textarea>
 
-        
-        <p>By sending this form, you agree to our privacy policy.</p>
-        <button type="submit" className="submit-button">Submit</button>
+        <p>{t('contact.privacyPolicy')}</p>
+        <button type="submit" className="submit-button">{t('contact.submitButtonText')}</button>
       </form>
     </div>
-  )
+  );
 }
 
-export default ContactPage
+export default ContactPage;
