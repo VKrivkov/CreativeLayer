@@ -5,6 +5,7 @@ import { MainPage2, Navbar2, PrintTypes2, Gallery2, Footer2, HowItWorks2, PriceC
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HeadTags from './components/HeadTags'; // Ensure the correct path is set
+import NotFoundPage from './components/NotFoundPage/NotFoundPage'; // Ensure the correct path is set
 
 import './App.css'
 
@@ -39,6 +40,7 @@ function App() {
             <Footer2/>
             </>
           } />
+      <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
