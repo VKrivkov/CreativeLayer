@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
-import i18n from '../../i18n'; // Adjust the path to match where your i18n setup file is located
 import './ContactPage.css';
 
 function ContactPage() {
@@ -55,10 +54,6 @@ function ContactPage() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Handle the form submission logic here
-  };
 
   const handleButtonClick = (e) => {
     e.preventDefault(); // Prevent default form submission if the button is within a form
