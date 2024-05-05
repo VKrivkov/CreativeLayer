@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';
+import i18n from '../../i18n'; // Adjust the path to match where your i18n setup file is located
 import './ContactPage.css';
 
 function ContactPage() {
@@ -72,7 +73,7 @@ function ContactPage() {
       </div>
       <h2>{t('contact.or')}</h2>  {/* Assuming 'or' is also translated */}
 
-      <form className="contact-form2" onSubmit={handleSubmit} action="https://formsubmit.co/073b02508c4ba23d7356487802268a1d" enctype="multipart/form-data" method="POST">
+      <form className="contact-form2" action="https://formsubmit.co/073b02508c4ba23d7356487802268a1d" enctype="multipart/form-data" method="POST">
         <input type="hidden" name="_url" value="https://creative-layer.com/"></input>
         <input
           type="email"
