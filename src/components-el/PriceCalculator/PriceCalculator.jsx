@@ -176,7 +176,7 @@ const PriceCalculator = () => {
         </div>
         <div className='price-calculator-container'>
             <form className="contact-form" onSubmit={handleSubmit} encType="multipart/form-data" >
-            <p>Ανεβάστε το 3D μοντέλο σας (μέγιστο μέγεθος 5MB)</p>
+            <p>Ανεβάστε το 3D μοντέλο σας</p>
             <div className="file-upload">
                 <input
                 id="file"

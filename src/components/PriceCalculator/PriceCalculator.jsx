@@ -178,7 +178,7 @@ const PriceCalculator = () => {
         </div>
         <div className='price-calculator-container'>
             <form className="contact-form" onSubmit={handleSubmit} enctype="multipart/form-data" >
-            <p>Upload your 3D model (not more than 5MB)</p>
+            <p>Upload your 3D model</p>
             <div className="file-upload">
                 <input
                 id="file"
