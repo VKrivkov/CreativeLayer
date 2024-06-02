@@ -1,12 +1,23 @@
 {
   "contact": {
     "headline": "Contact me!",
-    "uploadLabel": "Upload your model (not more than 5MB)",
+    "uploadLabel": "Not mandatory",
     "uploadSpan": "Upload .STL (max 5MB)",
     "or" : "OR",
     "emailPlaceholder": "Enter your email",
+    "namePlaceholder": "Enter your name",
+    "socialPlaceholder": "Telegram or WhatsApp",
     "messagePlaceholder": "Type your message here",
     "submitButtonText": "Submit",
-    "privacyPolicy": "By sending this form, you agree to our privacy policy."
+    "privacyPolicy": "By sending this form, you agree to our privacy policy.",
+    "errors": {
+      "validEmail": "Please enter a valid email address.",
+      "name": "Please enter your name."
+    }
+  },
+  "thanx": {
+    "thanksMessage": "Thanks!",
+    "confirmationMessage": "Your request has been sent. We will contact you soon!",
+    "goHome": "Go to home page"
   }
 }

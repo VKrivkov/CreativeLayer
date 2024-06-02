@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import i18n from '../../i18n'; // Adjust the path to match where your i18n setup file is located
 import './ContactPage.css';
 
 function ContactPage() {
   const location = useLocation();
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate(); // Initialize useNavigate
   const [formErrors, setFormErrors] = useState({});
-  const [fileName, setFileName] = useState(t('contact.uploadSpan')); // Set initial state with translation
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -22,16 +22,28 @@ function ContactPage() {
   }, [location, i18n, t]); // React to changes in location, i18n instance, or translation function
 
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
-    printingType: 'SLA', // Default to SLA
+    social: '',
     message: '',
-    file: null,
   });
 
   const handleInvalid = (e) => {
     e.preventDefault(); // Prevent the browser from showing default error bubble / hint
     const fieldName = e.target.name;
-    let message = t('contact.validEmailMessage'); // Assuming you have a translation for this
+    let message = '';
+    if (!e.target.validity.valid) {
+      switch (fieldName) {
+        case 'email':
+          message = t("contact.errors.validEmail");
+          break;
+        case 'name':
+          message = t("contact.errors.name");
+          break;
+        default:
+          message = t("contact.errors.requiredField");
+      }
+    }
     setFormErrors({ ...formErrors, [fieldName]: message });
   };
 
@@ -44,21 +56,32 @@ function ContactPage() {
     setFormErrors({ ...formErrors, [name]: '' });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setFormData({ ...formData, file: file });
-      setFileName(file.name);
-    } else {
-      setFormData({ ...formData, file: null });
-      setFileName(t('contact.chooseFile'));  // Translation for default file label
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('access_key', 'a99d58fa-0bd2-4d30-bec0-983f190c3bd2');
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('social', formData.social);
+    formDataToSend.append('message', formData.message);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        const currentLanguage = i18n.language;
+        navigate(`/thanks?lang=${currentLanguage}`); // Navigate to the Thank You page with language parameter
+      } else {
+        // Handle the error
+        console.error('Form submission error:', response);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
     }
-  };
-
-
-  const handleButtonClick = (e) => {
-    e.preventDefault(); // Prevent default form submission if the button is within a form
-    fileInputRef.current.click(); // Trigger click on the actual file input
   };
 
   return (
@@ -73,8 +96,21 @@ function ContactPage() {
       </div>
       <h2>{t('contact.or')}</h2>  {/* Assuming 'or' is also translated */}
 
-      <form className="contact-form2" action="https://formsubmit.co/073b02508c4ba23d7356487802268a1d" enctype="multipart/form-data" method="POST">
+      <form className="contact-form2" onSubmit={handleSubmit}>
+        <input type="hidden" name="access_key" value="a99d58fa-0bd2-4d30-bec0-983f190c3bd2"/>
         <input type="hidden" name="_url" value="https://creative-layer.com/"></input>
+        <input
+          type="name"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className={formErrors.name ? 'invalid' : ''}
+          onInvalid={handleInvalid}
+          placeholder={t('contact.namePlaceholder')}
+          required
+        />
+        {formErrors.name && <div className="error-message">{formErrors.name}</div>}
+
         <input
           type="email"
           name="email"
@@ -89,46 +125,16 @@ function ContactPage() {
         {formErrors.email && <div className="error-message">{formErrors.email}</div>}
 
         <p>{t('contact.uploadLabel')}</p>
-
-        <div className="file-upload">
-          <input
-            id="attachment"
-            type="file"
-            name="attachment"
-            className="inputfile"
-            onChange={handleFileChange}
-            accept=".stl"
-            ref={fileInputRef}
-            style={{ display: 'none' }}
-          />
-          <label htmlFor="attachment" className="file-upload-label">
-            <span>{fileName}</span>
-            <button type="button" onClick={handleButtonClick}>Browse</button>
-          </label>
-        </div>
-
-        <div className='radio-buttons'>
-          <label>
-            <input
-              type="radio"
-              name="printingType"
-              value="SLA"
-              checked={formData.printingType === 'SLA'}
-              onChange={handleChange}
-            />
-            {t('SLA')}
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="printingType"
-              value="FDM"
-              checked={formData.printingType === 'FDM'}
-              onChange={handleChange}
-            />
-            {t('FDM')}
-          </label>
-        </div>
+        <input
+          type="social"
+          name="social"
+          value={formData.social}
+          onChange={handleChange}
+          className={formErrors.social ? 'invalid' : ''}
+          onInvalid={handleInvalid}
+          placeholder={t('contact.socialPlaceholder')}
+          pattern="^@\w+$"
+        />
 
         <textarea
           name="message"
