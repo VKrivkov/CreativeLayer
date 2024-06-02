@@ -32,7 +32,7 @@ const ThanxPage = () => {
           <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
         </div>
 
-        <a href='/' style={{fontSize : '20px', color : '#f5f5f5', fontFamily:'Inter', fontWeight : '500', textAlign:'center', margin:'50px 0px 0px 0px', color : '#E99F0E'}}><strong>{t('thanx.goHome')}</strong></a>
+        <a href='/' style={{fontSize : '20px', fontFamily:'Inter', fontWeight : '500', textAlign:'center', margin:'50px 0px 0px 0px', color : '#E99F0E'}}><strong>{t('thanx.goHome')}</strong></a>
       </div>
     </div>
   )
