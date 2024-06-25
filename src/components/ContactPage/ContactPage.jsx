@@ -91,7 +91,7 @@ function ContactPage() {
         <div className='contact-text-block'>
           <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
           <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
-          <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
+          <a href='https://www.instagram.com/creative_layer_3d/'><p><strong>Instagram:</strong> https://www.instagram.com/creative_layer_3d/</p></a>
         </div>
       </div>
       <h2>{t('contact.or')}</h2>  {/* Assuming 'or' is also translated */}

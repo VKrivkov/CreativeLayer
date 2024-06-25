@@ -29,7 +29,7 @@ const ThanxPage = () => {
         <div className='thanx-contact' style={{fontSize : '18px', color : '#f5f5f5', fontFamily:'Inter', fontWeight : '400', display:'flex', flexDirection:'column', alignItems : 'flex-start',textAlign:'left'}}>
           <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
           <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
-          <a href='https://www.instagram.com/lulupu.3d/'><p><strong>Instagram:</strong> https://www.instagram.com/lulupu.3d/</p></a>
+          <a href='https://www.instagram.com/creative_layer_3d/'><p><strong>Instagram:</strong> https://www.instagram.com/creative_layer_3d/</p></a>
         </div>
 
         <a href='/' style={{fontSize : '20px', fontFamily:'Inter', fontWeight : '500', textAlign:'center', margin:'50px 0px 0px 0px', color : '#E99F0E'}}><strong>{t('thanx.goHome')}</strong></a>
