@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className={`navbar-side ${isMenuOpen ? "show" : ""}`}>
           <Link to="/"> <p className='english1'>EN</p> </Link>
           <Link to="/el"> <p className='greek1'>EL</p></Link>
-          <a href='https://www.instagram.com/lulupu.3d/'> <img src={Icon2} alt="Instagram" /> </a>
+          <a href='https://www.instagram.com/creative_layer_3d/'> <img src={Icon2} alt="Instagram" /> </a>
           <a href='https://twitter.com/LLupulus'> <img src={Icon3} alt="Twitter" /> </a>
         </div>
 
