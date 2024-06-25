@@ -133,7 +133,6 @@ function ContactPage() {
           className={formErrors.social ? 'invalid' : ''}
           onInvalid={handleInvalid}
           placeholder={t('contact.socialPlaceholder')}
-          pattern="^@\w+$"
         />
 
         <textarea
