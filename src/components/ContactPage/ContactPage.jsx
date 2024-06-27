@@ -96,7 +96,7 @@ function ContactPage() {
         <h2 className='headline-gallery'>{t('contact.headline')}</h2>
         <div className='contact-text-block'>
           <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> <u style={{color:'#E99F0E'}}>@CreativeLayer</u></p></a>
-          <a href='https://wa.me/qr/6HHFMSY3KXPEE1'><p><strong>WhatsApp:</strong> <u style={{color:'#E99F0E'}}>https://wa.me/qr/6HHFMSY3KXPEE1</u></p></a>
+          <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> <u style={{color:'#E99F0E'}}>https://wa.me/35797816242</u></p></a>
           <a href='https://www.instagram.com/creative_layer_3d/'><p><strong>Instagram:</strong> <u style={{color:'#E99F0E'}}>https://www.instagram.com/creative_layer_3d/</u></p></a>
           <p><strong>Phone Number:</strong> {!showPhoneNumber ? (
             <button onClick={handleShowPhoneNumber} style={{color:'#E99F0E', border: 'none', background: 'none', cursor: 'pointer'}}>{t('contact.showPhoneNumber')}</button>
