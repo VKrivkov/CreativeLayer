@@ -28,6 +28,8 @@ function ContactPage() {
     message: '',
   });
 
+  const [showPhoneNumber, setShowPhoneNumber] = useState(false); // State for managing phone number visibility
+
   const handleInvalid = (e) => {
     e.preventDefault(); // Prevent the browser from showing default error bubble / hint
     const fieldName = e.target.name;
@@ -83,15 +85,24 @@ function ContactPage() {
       console.error('Form submission error:', error);
     }
   };
+  
+  const handleShowPhoneNumber = () => {
+    setShowPhoneNumber(true); // Show the phone number when button is clicked
+  };
 
   return (
     <div className="contact-form-container" id='contact'>
       <div className="contact-info">
         <h2 className='headline-gallery'>{t('contact.headline')}</h2>
         <div className='contact-text-block'>
-          <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> @CreativeLayer</p></a>
-          <a href='https://wa.me/35797816242'><p><strong>WhatsApp:</strong> https://wa.me/35797816242</p></a>
-          <a href='https://www.instagram.com/creative_layer_3d/'><p><strong>Instagram:</strong> https://www.instagram.com/creative_layer_3d/</p></a>
+          <a href='https://t.me/CreativeLayer'><p><strong>Telegram:</strong> <u style={{color:'#E99F0E'}}>@CreativeLayer</u></p></a>
+          <a href='https://wa.me/qr/6HHFMSY3KXPEE1'><p><strong>WhatsApp:</strong> <u style={{color:'#E99F0E'}}>https://wa.me/qr/6HHFMSY3KXPEE1</u></p></a>
+          <a href='https://www.instagram.com/creative_layer_3d/'><p><strong>Instagram:</strong> <u style={{color:'#E99F0E'}}>https://www.instagram.com/creative_layer_3d/</u></p></a>
+          <p><strong>Phone Number:</strong> {!showPhoneNumber ? (
+            <button onClick={handleShowPhoneNumber} style={{color:'#E99F0E', border: 'none', background: 'none', cursor: 'pointer'}}>{t('contact.showPhoneNumber')}</button>
+          ) : (
+            <span>+35797816242</span>
+          )}</p>
         </div>
       </div>
       <h2>{t('contact.or')}</h2>  {/* Assuming 'or' is also translated */}

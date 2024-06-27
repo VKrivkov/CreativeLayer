@@ -10,6 +10,7 @@
     "messagePlaceholder": "Type your message here",
     "submitButtonText": "Submit",
     "privacyPolicy": "By sending this form, you agree to our privacy policy.",
+    "showPhoneNumber" : " Show phone number",
     "errors": {
       "validEmail": "Please enter a valid email address.",
       "name": "Please enter your name."

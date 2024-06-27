@@ -53,8 +53,8 @@ const Footer = () => {
         <div className='contact-info-container'>
           <h6 style={{color:'#E99F0E'}}>Contact me</h6>
           <p>creative0.0layer@gmail.com</p>
-          <a href='https://t.me/CreativeLayer'><p> @CreativeLayer</p></a>
-          <a href='https://wa.me/35797816242'><p> https://wa.me/35797816242</p></a>
+          <a href='https://t.me/CreativeLayer'><p> <u>@CreativeLayer</u></p></a>
+          <a href='https://wa.me/qr/6HHFMSY3KXPEE1'><p> <u>https://wa.me/qr/6HHFMSY3KXPEE1</u></p></a>
         </div>
         <div className='navigation-footer'>
           <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="footer-link">Home</a>
