@@ -57,7 +57,7 @@ const Footer = () => {
         </div>
         <div className='navigation-footer'>
           <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="footer-link">Αρχική</a>
-          <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="footer-link">Αριθμομηχανή</a>
+          {/* <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="footer-link">Αριθμομηχανή</a> */}
           <a href="#gallery" onClick={(e) => {e.preventDefault(); scrollToSection('gallery');}} className="footer-link">Μοντέλα 3D</a>
           <a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}} className="footer-link">Επικοινωνία</a>
         </div>

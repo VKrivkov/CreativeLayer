@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
         <div className='navigation-footer'>
           <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="footer-link">Home</a>
-          <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="footer-link">Calculator</a>
+          {/* <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="footer-link">Calculator</a> */}
           <a href="#gallery" onClick={(e) => {e.preventDefault(); scrollToSection('gallery');}} className="footer-link">3D-Models</a>
           <a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}} className="footer-link">Contact</a>
         </div>
