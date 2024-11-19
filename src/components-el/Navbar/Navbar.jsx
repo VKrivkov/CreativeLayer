@@ -64,7 +64,7 @@ const Navbar = () => {
         <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link">Αρχική</a>
         <a href="#price" onClick={(e) => { e.preventDefault(); scrollToSection('price'); }} className="nav-link">Αριθμομηχανή</a>
         <a href="#gallery" onClick={(e) => { e.preventDefault(); scrollToSection('gallery'); }} className="nav-link">Μοντέλα 3D</a>
-        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link">Επικοινωνία</a>
+        <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link"><strong style={{color: "#E99F0E"}}>Επικοινωνία</strong></a>
 
         <div className={`navbar-side ${isMenuOpen ? "show" : ""}`}>
           <Link to="/"> <p className='english1'>EN</p> </Link>

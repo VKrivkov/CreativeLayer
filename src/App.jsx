@@ -24,7 +24,7 @@ function App() {
           <MainPage/>
           <HowItWorks/>
           <PrintTypes/>
-          <PriceCalculator/>
+          {/* <PriceCalculator/> */}
           <Gallery/>
           <ContactPage/>
           <Footer/>
@@ -36,7 +36,7 @@ function App() {
             <MainPage2/>
             <HowItWorks2/>
             <PrintTypes2/>
-            <PriceCalculator2/>
+            {/* <PriceCalculator2/> */}
             <Gallery2/>
             <ContactPage/>
             <Footer2/>
