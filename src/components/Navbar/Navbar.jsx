@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
       <div className={`navbar-center ${isMenuOpen ? "show" : ""}`}>
         <a href="#home" onClick={(e) => {e.preventDefault(); scrollToSection('home');}} className="nav-link">Home</a>
-        <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="nav-link">Calculator</a>
+        {/* <a href="#price" onClick={(e) => {e.preventDefault(); scrollToSection('price');}} className="nav-link">Calculator</a> */}
         <a href="#gallery" onClick={(e) => {e.preventDefault(); scrollToSection('gallery');}} className="nav-link">3D-Models</a>
         <a href="#contact" onClick={(e) => {e.preventDefault(); scrollToSection('contact');}} className="nav-link"><strong style={{color: "#E99F0E"}}>Contact</strong></a>
 
